@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">The Rhombus</string>
+    <string name="title">The Rhombus</string>
+    <string name="startButtonText">Start</string>
+    <string name="mainActivityLabel">MainActivity</string>
+    <string name="menuActivityLabel">MenuActivity</string>
+    <string name="button1Text">Company</string>
+    <string name="button2Text">Custom</string>
+    <string name="button3Text">Settings</string>
+    <string name="button4Text">Exit</string>
+</resources>

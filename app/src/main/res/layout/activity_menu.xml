@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menuActivityBack"
+    tools:context=".MenuActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textAlignment="center"
+                    android:textSize="40sp"
+                    android:textColor="@color/mainActivityText"
+                    android:layout_marginBottom="4dp"/>
+
+                <Button
+                    android:id="@+id/button1"
+                    android:background="@color/menuActivityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@string/button1Text"
+                    android:textSize="32sp"
+                    android:textColor="@color/mainActivityText"
+                    android:onClick="onButton1Click"/>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:background="@color/menuActivityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@string/button2Text"
+                    android:textSize="32sp"
+                    android:textColor="@color/mainActivityText"
+                    android:onClick="onButton2Click"/>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:background="@color/menuActivityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@string/button3Text"
+                    android:textSize="32sp"
+                    android:textColor="@color/mainActivityText"
+                    android:onClick="onButton3Click"/>
+
+                <Button
+                    android:id="@+id/button4"
+                    android:background="@color/menuActivityButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:text="@string/button4Text"
+                    android:textSize="32sp"
+                    android:textColor="@color/mainActivityText"
+                    android:onClick="onButton4Click"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
