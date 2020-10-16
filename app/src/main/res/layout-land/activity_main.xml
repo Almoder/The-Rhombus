@@ -27,9 +27,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
                 android:textSize="40sp"
+                android:textColor="@color/mainActivityText"
                 android:layout_marginBottom="40dp" />
 
             <Button

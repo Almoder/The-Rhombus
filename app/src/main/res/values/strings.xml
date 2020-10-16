@@ -8,4 +8,40 @@
     <string name="button2Text">Custom</string>
     <string name="button3Text">Settings</string>
     <string name="button4Text">Exit</string>
+    <string name="company">Company</string>
+    <string name="backButtonText">Back</string>
+    <string name="cBT1">1</string>
+    <string name="cBT2">2</string>
+    <string name="cBT3">3</string>
+    <string name="cBT4">4</string>
+    <string name="cBT5">5</string>
+    <string name="cBT6">6</string>
+    <string name="cBT7">7</string>
+    <string name="cBT8">8</string>
+    <string name="cBT9">9</string>
+    <string name="cBT10">10</string>
+    <string name="cBT11">11</string>
+    <string name="cBT12">12</string>
+    <string name="cBT13">13</string>
+    <string name="cBT14">14</string>
+    <string name="cBT15">15</string>
+    <string name="cBT16">16</string>
+    <!-- string-array name="companyButtonText">
+        <item>@string/cBT1</item>
+        <item>@string/cBT2</item>
+        <item>@string/cBT3</item>
+        <item>@string/cBT4</item>
+        <item>@string/cBT5</item>
+        <item>@string/cBT6</item>
+        <item>@string/cBT7</item>
+        <item>@string/cBT8</item>
+        <item>@string/cBT9</item>
+        <item>@string/cBT10</item>
+        <item>@string/cBT11</item>
+        <item>@string/cBT12</item>
+        <item>@string/cBT13</item>
+        <item>@string/cBT14</item>
+        <item>@string/cBT15</item>
+        <item>@string/cBT16</item>
+    </string-array-->
 </resources>

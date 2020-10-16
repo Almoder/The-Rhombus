@@ -2,6 +2,7 @@ package space.almoder.therhombus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,7 +21,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onButton1Click(View view) {
-
+        startActivity(new Intent(this, CompanyActivity.class));
     }
 
     public void onButton2Click(View view) {

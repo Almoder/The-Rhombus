@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="companyButtonPortraitSize">84dp</dimen>
+    <dimen name="companyButtonPortraitTextSize">24sp</dimen>
+    <dimen name="companyButtonLandscapeSize">60dp</dimen>
+    <dimen name="companyButtonLandscapeTextSize">12sp</dimen>
+</resources>

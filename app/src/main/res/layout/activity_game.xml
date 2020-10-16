@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gameActivityBack"
+    tools:context=".GameActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@color/gameActivityBack"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/game_pause"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/field"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                app:srcCompat="@drawable/empty"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="69dp"
+                android:layout_height="4dp"
+                app:srcCompat="@drawable/empty"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="4dp"
+                android:layout_height="4dp"
+                app:srcCompat="@drawable/empty"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="69dp"
+                android:layout_height="4dp"
+                app:srcCompat="@drawable/empty"
+                tools:ignore="ContentDescription"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/screen_background_dark"
+                tools:ignore="ContentDescription" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+
+</LinearLayout>

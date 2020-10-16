@@ -13,16 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println(0);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if (fin==true) MainActivity.this.finish();
+        if (getFin()) {
+            setFin(false);
+            MainActivity.this.finish();
+        }
     }
 
-    public static boolean fin() {
+    public static boolean getFin() {
         return fin;
     }
 

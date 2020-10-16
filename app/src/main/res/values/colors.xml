@@ -4,9 +4,19 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="mainActivityBack">#FFFFFF</color>
-    <color name="menuActivityBack">#FFFFFF</color>
     <color name="mainActivityText">#000000</color>
-    <color name="menuActivityText">#000000</color>
     <color name="mainActivityButton">#FFFFFF</color>
+    <color name="menuActivityBack">#FFFFFF</color>
+    <color name="menuActivityText">#000000</color>
     <color name="menuActivityButton">#FFFFFF</color>
+    <color name="companyActivityBack">#FFFFFF</color>
+    <color name="companyActivityText">#000000</color>
+    <color name="companyActivityButtonBack">#FFFFFF</color>
+    <color name="companyActivityButtonText">#000000</color>
+    <color name="gameActivityBack">#FFFFFF</color>
+    <color name="gameActivityGrid">#000000</color>
+    <color name="player1Color">#0000FF</color>
+    <color name="player2Color">#FF0000</color>
+    <color name="shapeDefault">#000000</color>
+    <color name="lineUnchecked">#666666</color>
 </resources>

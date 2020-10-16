@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="eDot">0</integer>
+    <integer name="eLnh">1</integer>
+    <integer name="eLnv">2</integer>
+    <integer name="eRct">3</integer>
+    <integer name="fDot">4</integer>
+    <integer name="fLnh">5</integer>
+    <integer name="fLnv">6</integer>
+    <integer name="fRct">7</integer>
+    <integer name="bnHl">8</integer>
+    <integer name="bnVl">9</integer>
+    <!-- Field 1 -->
+    <integer name="field1rows">11</integer>
+    <integer name="field1cols">11</integer>
+    <array name="field1">
+        <item>@array/f1_1</item>
+        <item>@array/f1_2</item>
+        <item>@array/f1_3</item>
+        <item>@array/f1_4</item>
+        <item>@array/f1_5</item>
+        <item>@array/f1_6</item>
+        <item>@array/f1_5</item>
+        <item>@array/f1_4</item>
+        <item>@array/f1_3</item>
+        <item>@array/f1_2</item>
+        <item>@array/f1_1</item>
+    </array>
+    <integer-array name="f1_1">
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+    </integer-array>
+    <integer-array name="f1_2">
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/fRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+    </integer-array>
+    <integer-array name="f1_3">
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+    </integer-array>
+    <integer-array name="f1_4">
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+    </integer-array>
+    <integer-array name="f1_5">
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+    </integer-array>
+    <integer-array name="f1_6">
+        <item>@integer/fLnv</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/fLnv</item>
+    </integer-array>
+    <integer-array name="f1_7">
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+    </integer-array>
+    <integer-array name="f1_8">
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/bnVl</item>
+        <item>@integer/fRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+    </integer-array>
+    <integer-array name="f1_9">
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/bnHl</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+    </integer-array>
+    <integer-array name="f1_10">
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/fRct</item>
+        <item>@integer/fLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+        <item>@integer/eRct</item>
+        <item>@integer/eLnv</item>
+    </integer-array>
+    <integer-array name="f1_11">
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/fLnh</item>
+        <item>@integer/fDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+        <item>@integer/eLnh</item>
+        <item>@integer/eDot</item>
+    </integer-array>
+</resources>
