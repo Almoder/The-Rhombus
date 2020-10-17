@@ -4,7 +4,11 @@
     <dimen name="companyButtonPortraitTextSize">24sp</dimen>
     <dimen name="companyButtonLandscapeSize">60dp</dimen>
     <dimen name="companyButtonLandscapeTextSize">12sp</dimen>
+    <dimen name="gamePointsSize">30sp</dimen>
     <!-- field1 -->
-    <dimen name="f1minWD">6dp</dimen>
+    <dimen name="f1minWD">8dp</dimen>
     <dimen name="f1maxWD">56dp</dimen>
+    <!-- field2 -->
+    <dimen name="f2minWD">8dp</dimen>
+    <dimen name="f2maxWD">56dp</dimen>
 </resources>

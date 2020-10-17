@@ -15,6 +15,7 @@
     <color name="companyActivityButtonText">#000000</color>
     <color name="gameActivityBack">#FFFFFF</color>
     <color name="gameActivityGrid">#000000</color>
+    <color name="gameActivityPoints">#000000</color>
     <color name="player1Color">#0000FF</color>
     <color name="player2Color">#FF0000</color>
     <color name="shapeDefault">#000000</color>

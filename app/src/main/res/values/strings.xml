@@ -10,6 +10,9 @@
     <string name="button4Text">Exit</string>
     <string name="company">Company</string>
     <string name="backButtonText">Back</string>
+    <string name="zeroGamePointsOne">0</string>
+    <string name="dotsGamePoints">:</string>
+    <string name="zeroGamePointsTwo">0</string>
     <string name="cBT1">1</string>
     <string name="cBT2">2</string>
     <string name="cBT3">3</string>
