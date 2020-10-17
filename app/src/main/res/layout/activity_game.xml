@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,69 +9,847 @@
     android:background="@color/gameActivityBack"
     tools:context=".GameActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:orientation="horizontal"
-        android:padding="8dp">
 
-        <ImageButton
-            android:id="@+id/backButton"
-            android:layout_width="69dp"
-            android:layout_height="69dp"
-            android:background="@color/gameActivityBack"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/game_pause"
-            tools:ignore="ContentDescription" />
-    </LinearLayout>
-
-    <TableLayout
-        android:id="@+id/field"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="4dp"
-                android:layout_height="4dp"
-                app:srcCompat="@drawable/empty"
-                tools:ignore="ContentDescription"/>
-
-            <ImageView
+            <ImageButton
+                android:id="@+id/backButton"
                 android:layout_width="69dp"
-                android:layout_height="4dp"
-                app:srcCompat="@drawable/empty"
-                tools:ignore="ContentDescription"/>
-
-            <ImageView
-                android:layout_width="4dp"
-                android:layout_height="4dp"
-                app:srcCompat="@drawable/empty"
-                tools:ignore="ContentDescription"/>
-
-            <ImageView
-                android:layout_width="69dp"
-                android:layout_height="4dp"
-                app:srcCompat="@drawable/empty"
-                tools:ignore="ContentDescription"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/screen_background_dark"
+                android:layout_height="69dp"
+                android:background="@color/gameActivityBack"
+                android:scaleType="fitXY"
+                android:onClick="onPauseClick"
+                app:srcCompat="@drawable/game_pause"
                 tools:ignore="ContentDescription" />
 
+            <TableLayout
+                android:id="@+id/field"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <!--
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
 
-        </TableRow>
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
 
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
 
-    </TableLayout>
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
 
-</LinearLayout>
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/lineUnchecked"
+                        android:onClick="onLineClick"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="69dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        android:background="@color/shapeDefault"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="69dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:layout_width="4dp"
+                        android:layout_height="4dp"
+                        app:srcCompat="@drawable/empty"
+                        tools:ignore="ContentDescription" />
+                </TableRow>
+                -->
+            </TableLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

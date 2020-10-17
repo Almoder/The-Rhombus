@@ -4,4 +4,7 @@
     <dimen name="companyButtonPortraitTextSize">24sp</dimen>
     <dimen name="companyButtonLandscapeSize">60dp</dimen>
     <dimen name="companyButtonLandscapeTextSize">12sp</dimen>
+    <!-- field1 -->
+    <dimen name="f1minWD">6dp</dimen>
+    <dimen name="f1maxWD">56dp</dimen>
 </resources>
