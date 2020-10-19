@@ -1,9 +1,5 @@
 package space.almoder.therhombus;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,15 +7,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CompanyActivity extends AppCompatActivity {
     static int levelId;
@@ -28,7 +19,7 @@ public class CompanyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
-        TableLayout table = (TableLayout) findViewById(R.id.tableLayout);
+        TableLayout table = findViewById(R.id.tableLayout);
         int idv = 2001;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             for (int i = 0; i < 4; i++) {
@@ -43,7 +34,8 @@ public class CompanyActivity extends AppCompatActivity {
                     temp.setHeight((int)getResources().getDimension(R.dimen.companyButtonPortraitSize));
                     temp.setBackgroundColor(getResources().getColor(R.color.companyActivityButtonBack));
                     temp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                    temp.setText(getResources().getString(getResources().getIdentifier("cBT" + (i + 1) * (j + 1), "string", getPackageName())));
+                    int index = i * 4 + j + 1;
+                    temp.setText(getResources().getString(getResources().getIdentifier("cBT" + index, "string", getPackageName())));
                     temp.setTextSize(getResources().getDimension(R.dimen.companyButtonPortraitTextSize));
                     temp.setTextColor(getResources().getColor(R.color.companyActivityButtonText));
                     temp.setOnClickListener(getLevelOnClick(temp));
@@ -67,7 +59,8 @@ public class CompanyActivity extends AppCompatActivity {
                     temp.setHeight((int)getResources().getDimension(R.dimen.companyButtonLandscapeSize));
                     temp.setBackgroundColor(getResources().getColor(R.color.companyActivityButtonBack));
                     temp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                    temp.setText(getResources().getString(getResources().getIdentifier("cBT" + (i + 1) * (j + 1), "string", getPackageName())));
+                    int index = i * 8 + j + 1;
+                    temp.setText(getResources().getString(getResources().getIdentifier("cBT" + index, "string", getPackageName())));
                     temp.setTextSize(getResources().getDimension(R.dimen.companyButtonLandscapeTextSize));
                     temp.setTextColor(getResources().getColor(R.color.companyActivityButtonText));
                     temp.setOnClickListener(getLevelOnClick(temp));

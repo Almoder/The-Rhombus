@@ -17,7 +17,31 @@
     <color name="gameActivityGrid">#000000</color>
     <color name="gameActivityPoints">#000000</color>
     <color name="player1Color">#0000FF</color>
-    <color name="player2Color">#FF0000</color>
-    <color name="shapeDefault">#000000</color>
-    <color name="lineUnchecked">#666666</color>
+    <color name="player2Color">#00FF00</color>
+    <!-- Default Field Colors -->
+    <!--
+    <color name="eDot">#FFFFFF</color>
+    <color name="eLnh">#FFFFFF</color>
+    <color name="eLnv">#FFFFFF</color>
+    <color name="eRct">#FFFFFF</color>
+    -->
+    <color name="fDot">#000000</color>
+    <color name="fLnh">#000000</color>
+    <color name="fLnv">#000000</color>
+    <color name="fRct">#FFFFFF</color>
+    <color name="bnHl">#666666</color>
+    <color name="bnVl">#666666</color>
+    <!-- Field 3 Colors -->
+    <!--
+    <color name="eDot3">#FFFFFF</color>
+    <color name="eLnh3">#FFFFFF</color>
+    <color name="eLnv3">#FFFFFF</color>
+    <color name="eRct3">#FFFFFF</color>
+     -->
+    <color name="fDot3">#000000</color>
+    <color name="fLnh3">#000000</color>
+    <color name="fLnv3">#000000</color>
+    <color name="fRct3">#FF0000</color>
+    <color name="bnHl3">#666666</color>
+    <color name="bnVl3">#666666</color>
 </resources>

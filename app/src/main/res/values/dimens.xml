@@ -11,4 +11,22 @@
     <!-- field2 -->
     <dimen name="f2minWD">8dp</dimen>
     <dimen name="f2maxWD">56dp</dimen>
+    <!-- field3 -->
+    <dimen name="f3minWD">8dp</dimen>
+    <dimen name="f3maxWD">56dp</dimen>
+    <!-- field4 -->
+    <dimen name="f4minWD">8dp</dimen>
+    <dimen name="f4maxWD">56dp</dimen>
+    <!-- field5 -->
+    <dimen name="f5minWD">8dp</dimen>
+    <dimen name="f5maxWD">56dp</dimen>
+    <!-- field6 -->
+    <dimen name="f6minWD">8dp</dimen>
+    <dimen name="f6maxWD">56dp</dimen>
+    <!-- field7 -->
+    <dimen name="f7minWD">8dp</dimen>
+    <dimen name="f7maxWD">56dp</dimen>
+    <!-- field8 -->
+    <dimen name="f8minWD">8dp</dimen>
+    <dimen name="f8maxWD">56dp</dimen>
 </resources>
