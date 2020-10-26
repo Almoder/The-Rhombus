@@ -4,11 +4,11 @@
     <string name="startButtonText">Start</string>
     <string name="mainActivityLabel">MainActivity</string>
     <string name="menuActivityLabel">MenuActivity</string>
-    <string name="button1Text">Company</string>
+    <string name="button1Text">Campaign</string>
     <string name="button2Text">Custom</string>
     <string name="button3Text">Settings</string>
     <string name="button4Text">Exit</string>
-    <string name="company">Company</string>
+    <string name="campaign">Campaign</string>
     <string name="backButtonText">Back</string>
     <string name="zeroGamePointsOne">0</string>
     <string name="dotsGamePoints">:</string>

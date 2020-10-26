@@ -68,13 +68,13 @@ public class GameActivity extends AppCompatActivity {
             bnHl = getResources().getColor(getResources().getIdentifier("bnHl" + lid, "color", getPackageName()));
             bnVl = getResources().getColor(getResources().getIdentifier("bnVl" + lid, "color", getPackageName()));
         }
+        int minWD = (int)getResources().getDimension(getResources().getIdentifier("f" + lid + "minWD", "dimen", getPackageName()));
+        int maxWD = (int)getResources().getDimension(getResources().getIdentifier("f" + lid + "maxWD", "dimen", getPackageName()));
         for (int i = 0; i < rows; i++) {
             TableRow tr = new TableRow(this);
             TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             params.gravity = Gravity.CENTER;
             tr.setLayoutParams(params);
-            int minWD = (int)getResources().getDimension(getResources().getIdentifier("f" + lid + "minWD", "dimen", getPackageName()));
-            int maxWD = (int)getResources().getDimension(getResources().getIdentifier("f" + lid + "maxWD", "dimen", getPackageName()));
             for (int j = 0; j < cols; j++) {
                 ImageView iv = new ImageView(this);
                 iv.setId(3000 + i * 10 + j);
@@ -126,12 +126,12 @@ public class GameActivity extends AppCompatActivity {
                         break;
                     case 8:
                         iv.setBackgroundColor(bnHl);
-                        iv.setOnClickListener(getLineOnClick(iv));
+                        //iv.setOnClickListener(getLineOnClick(iv));
                         ivParams = new TableRow.LayoutParams(maxWD, minWD);
                         break;
                     case 9:
                         iv.setBackgroundColor(bnVl);
-                        iv.setOnClickListener(getLineOnClick(iv));
+                        //iv.setOnClickListener(getLineOnClick(iv));
                         ivParams = new TableRow.LayoutParams(minWD, maxWD);
                         break;
                     default:
@@ -142,6 +142,24 @@ public class GameActivity extends AppCompatActivity {
                 tr.addView(iv);
             }
             field.addView(tr);
+        }
+        TableLayout buttonField = findViewById(R.id.buttonField);
+        for (int i = 1; i < rows - 1; i++) {
+            TableRow tr = new TableRow(this);
+            TableRow.LayoutParams params = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.gravity = Gravity.CENTER;
+            tr.setLayoutParams(params);
+            for (int j = 1; j < cols - 1; j++) {
+                ImageView iv = new ImageView(this);
+                iv.setId(3300 + i * 10 + j);
+                iv.setScaleType(ImageView.ScaleType.FIT_XY);
+                iv.setImageResource(R.drawable.empty);
+                TableRow.LayoutParams ivParams = new TableRow.LayoutParams((minWD + maxWD) / 2, (minWD + maxWD) / 2);
+                iv.setLayoutParams(ivParams);
+                if (indexes[i][j] == 8 || indexes[i][j] == 9) iv.setOnClickListener(getLineOnClick(iv));
+                tr.addView(iv);
+            }
+            buttonField.addView(tr);
         }
         if (savedInstanceState != null) {
             for (int i = 0; i < rows; i++) lines[i] = savedInstanceState.getIntArray("lines" + i);
@@ -166,13 +184,14 @@ public class GameActivity extends AppCompatActivity {
             for (int i = 0; i < lines.length; i++) {
                 if (lines[i] == null) throw new NullPointerException();
                 for (int j = 0; j < lines[i].length; j++) {
-                    if (lines[i][j] == 1 && (indexes[i][j] == 8 || indexes[i][j] == 9)) {
+                    if (lines[i][j] > 0 && (indexes[i][j] == 8 || indexes[i][j] == 9)) {
                         ImageView iv = findViewById(3000 + i * 10 + j);
-                        getLineOnClick(iv).onClick(iv);
+                        iv.setBackgroundColor(getResources().getColor(lines[i][j] == 1 ? R.color.player1Color : R.color.player2Color));
+                        ImageView ivButton = findViewById(3300 + i * 10 + j);
+                        ivButton.setEnabled(false);
                     }
                 }
             }
-
         }
     }
 
@@ -180,10 +199,11 @@ public class GameActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iv.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.player1Color : R.color.player2Color));
                 iv.setEnabled(false);
-                int ivId = (int)iv.getId() - 3000, rem = ivId % 10;
-                lines[(ivId - rem) / 10][rem] = 1;
+                int ivId = (int)iv.getId() - 3300, rem = ivId % 10;
+                ImageView ivLine = findViewById(3000 + ivId);
+                ivLine.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.player1Color : R.color.player2Color));
+                lines[(ivId - rem) / 10][rem] = turn == 0 ? 1 : 2;
                 boolean check = checkLines();
                 if (check) {
                     if (addition) {
@@ -212,7 +232,7 @@ public class GameActivity extends AppCompatActivity {
         for(int i = 1; i <= lines.length - 2; i += 2) {
             for (int j = 1; j <= lines[i].length - 2; j += 2) {
                 if (lines[i][j] > 0) continue;
-                if (lines[i - 1][j] == 1 && lines[i][j - 1] == 1 && lines[i + 1][j] == 1 && lines[i][j + 1] == 1) {
+                if (lines[i - 1][j] > 0 && lines[i][j - 1] > 0 && lines[i + 1][j] > 0 && lines[i][j + 1] > 0) {
                     ImageView iv = findViewById(3000 + i * 10 + j);
                     lines[i][j] = turn == 0 ? 1 : 2;
                     iv.setImageResource(lines[i][j] == 1 ? R.drawable.cross : R.drawable.circle);
@@ -243,32 +263,32 @@ public class GameActivity extends AppCompatActivity {
     private void letAITurn() {
         ImageView iv;
         int freeI = 0, freeJ = 0;
-        for (int i = 1; i < lines.length - 2; i += 2) {
-            for (int j = 2; j < lines[i].length - 1; j += 2) {
+        for (int i = 1; i <= lines.length - 2; i += 2) {
+            for (int j = 2; j <= lines[i].length - 3; j += 2) {
                 if (lines[i][j] == 0) {
                     if (freeI == 0 && freeJ == 0) {
                         freeI = i;
                         freeJ = j;
                     }
-                    if ((lines[i-1][j-1] == 1 && lines[i][j-2] == 1 && lines[i+1][j-1] == 1) ||
-                        (lines[i-1][j+1] == 1 && lines[i][j+2] == 1 && lines[i+1][j+1] == 1)) {
-                        iv = findViewById(3000 + i * 10 + j);
+                    if ((lines[i-1][j-1] > 0 && lines[i][j-2] > 0 && lines[i+1][j-1] > 0) ||
+                        (lines[i-1][j+1] > 0 && lines[i][j+2] > 0 && lines[i+1][j+1] > 0)) {
+                        iv = findViewById(3300 + i * 10 + j);
                         iv.callOnClick();
                         return;
                     }
                 }
             }
         }
-        for (int i = 2; i < lines.length - 1; i += 2) {
-            for (int j = 1; j < lines[i].length - 2; j += 2) {
+        for (int i = 2; i <= lines.length - 3; i += 2) {
+            for (int j = 1; j <= lines[i].length - 2; j += 2) {
                 if (lines[i][j] == 0) {
                     if (freeI == 0 && freeJ == 0) {
                         freeI = i;
                         freeJ = j;
                     }
-                    if ((lines[i-1][j-1] == 1 && lines[i-2][j] == 1 && lines[i-1][j+1] == 1) ||
-                        (lines[i+1][j-1] == 1 && lines[i+2][j] == 1 && lines[i+1][j+1] == 1)) {
-                        iv = findViewById(3000 + i * 10 + j);
+                    if ((lines[i-1][j-1] > 0 && lines[i-2][j] > 0 && lines[i-1][j+1] > 0) ||
+                        (lines[i+1][j-1] > 0 && lines[i+2][j] > 0 && lines[i+1][j+1] > 0)) {
+                        iv = findViewById(3300 + i * 10 + j);
                         iv.callOnClick();
                         return;
                     }
@@ -280,7 +300,7 @@ public class GameActivity extends AppCompatActivity {
                 if (lines[i][j] == 0) {
                     if (lines[i-1][j-1] == 0 && lines[i-1][j+1] == 0 &&
                         lines[i+1][j-1] == 0 && lines[i+1][j+1] == 0) {
-                        iv = findViewById(3000 + i * 10 + j);
+                        iv = findViewById(3300 + i * 10 + j);
                         iv.callOnClick();
                         return;
                     }
@@ -292,14 +312,16 @@ public class GameActivity extends AppCompatActivity {
                 if (lines[i][j] == 0) {
                     if (lines[i-1][j-1] == 0 && lines[i+1][j-1] == 0 &&
                         lines[i-1][j+1] == 0 && lines[i+1][j+1] == 0) {
-                        iv = findViewById(3000 + i * 10 + j);
+                        iv = findViewById(3300 + i * 10 + j);
                         iv.callOnClick();
                         return;
                     }
                 }
             }
         }
-        iv = findViewById(3000 + freeI * 10 + freeJ);
-        iv.callOnClick();
+        if (freeI != 0 && freeJ != 0) {
+            iv = findViewById(3300 + freeI * 10 + freeJ);
+            iv.callOnClick();
+        }
     }
 }

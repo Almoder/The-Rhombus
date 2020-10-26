@@ -20,7 +20,6 @@ public class CompanyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
         TableLayout table = findViewById(R.id.tableLayout);
-        int idv = 2001;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             for (int i = 0; i < 4; i++) {
                 TableRow row = new TableRow(this);
@@ -29,7 +28,7 @@ public class CompanyActivity extends AppCompatActivity {
                 row.setLayoutParams(params);
                 for (int j = 0; j < 4; j++) {
                     Button temp = new Button(this);
-                    temp.setId(idv + (i + 1) * j);
+                    temp.setId(2001 + i * 4 + j);
                     temp.setWidth((int)getResources().getDimension(R.dimen.companyButtonPortraitSize));
                     temp.setHeight((int)getResources().getDimension(R.dimen.companyButtonPortraitSize));
                     temp.setBackgroundColor(getResources().getColor(R.color.companyActivityButtonBack));
@@ -42,7 +41,6 @@ public class CompanyActivity extends AppCompatActivity {
                     row.addView(temp);
                 }
                 table.addView(row);
-                idv += 4;
             }
         }
         else {
@@ -54,7 +52,7 @@ public class CompanyActivity extends AppCompatActivity {
                 row.setLayoutParams(params);
                 for (int j = 0; j < 8; j++) {
                     Button temp = new Button(this);
-                    temp.setId(idv + (i + 1) * j);
+                    temp.setId(2001 + i * 8 + j);
                     temp.setWidth((int)getResources().getDimension(R.dimen.companyButtonLandscapeSize));
                     temp.setHeight((int)getResources().getDimension(R.dimen.companyButtonLandscapeSize));
                     temp.setBackgroundColor(getResources().getColor(R.color.companyActivityButtonBack));
@@ -67,7 +65,6 @@ public class CompanyActivity extends AppCompatActivity {
                     row.addView(temp);
                 }
                 table.addView(row);
-                idv += 8;
             }
         }
     }

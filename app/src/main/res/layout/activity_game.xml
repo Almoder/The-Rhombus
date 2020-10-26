@@ -52,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:text="@string/zeroGamePointsOne"
                     android:textColor="@color/gameActivityPoints"
                     android:textSize="@dimen/gamePointsSize"/>
 
@@ -68,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:text="@string/zeroGamePointsTwo"
                     android:textColor="@color/gameActivityPoints"
                     android:textSize="@dimen/gamePointsSize"/>
             </LinearLayout>

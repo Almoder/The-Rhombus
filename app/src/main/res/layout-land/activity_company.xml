@@ -27,7 +27,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/company"
+                android:text="@string/campaign"
                 android:textAlignment="center"
                 android:textColor="@color/companyActivityText"
                 android:textSize="40sp"
