@@ -32,10 +32,12 @@ public class GameActivity extends AppCompatActivity {
         for (int i = 0; i < rows; i++) {
             indexes[i] = getResources().getIntArray(getResources().getIdentifier("f" + lid + "_" + (i + 1), "array", getPackageName()));
         }
+        /*
         TextView tv1 = findViewById(R.id.pOnePTV);
         TextView tv2 = findViewById(R.id.pTwoPTV);
         tv1.setText(String.valueOf(pOne));
         tv2.setText(String.valueOf(pTwo));
+         */
         TableLayout field = findViewById(R.id.field);
         int /*eDot, eLnh, eLnv, eRct,*/ fDot, fLnh, fLnv, fRct, bnHl, bnVl;
         if (getResources().getInteger(getResources().getIdentifier("field" + lid + "colors", "integer", getPackageName())) == 0) {
@@ -83,21 +85,25 @@ public class GameActivity extends AppCompatActivity {
                         //iv.setBackgroundColor(eDot);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(minWD, minWD);
+                        lines[i][j] = -1;
                         break;
                     case 1:
                         //iv.setBackgroundColor(eLnh);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(maxWD, minWD);
+                        lines[i][j] = -1;
                         break;
                     case 2:
                         //iv.setBackgroundColor(eLnv);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(minWD, maxWD);
+                        lines[i][j] = -1;
                         break;
                     case 3:
                         //iv.setBackgroundColor(eRct);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(maxWD, maxWD);
+                        lines[i][j] = -1;
                         break;
                     case 4:
                         iv.setBackgroundColor(fDot);
@@ -139,7 +145,7 @@ public class GameActivity extends AppCompatActivity {
         }
         if (savedInstanceState != null) {
             for (int i = 0; i < rows; i++) lines[i] = savedInstanceState.getIntArray("lines" + i);
-            for(int i = 1; i <= lines.length - 2; i += 2)
+            for (int i = 1; i <= lines.length - 2; i += 2)
                 for (int j = 1; j <= lines[i].length - 2; j += 2) {
                     int index = lines[i][j];
                     if (index > 0) {
@@ -158,9 +164,10 @@ public class GameActivity extends AppCompatActivity {
                     }
                 }
             for (int i = 0; i < lines.length; i++) {
+                if (lines[i] == null) throw new NullPointerException();
                 for (int j = 0; j < lines[i].length; j++) {
                     if (lines[i][j] == 1 && (indexes[i][j] == 8 || indexes[i][j] == 9)) {
-                        ImageView iv = (ImageView) findViewById(3000 + i * 10 + j);
+                        ImageView iv = findViewById(3000 + i * 10 + j);
                         getLineOnClick(iv).onClick(iv);
                     }
                 }
@@ -181,13 +188,16 @@ public class GameActivity extends AppCompatActivity {
                 if (check) {
                     if (addition) {
                         addition = false;
-                        turn = (turn == 0 ? 1 : 0);
+                        turn = turn == 0 ? 1 : 0;
                     }
                     else addition = true;
                 }
                 else {
                     addition = false;
-                    turn = (turn == 0 ? 1 : 0);
+                    turn = turn == 0 ? 1 : 0;
+                }
+                if (turn == 1) {
+                    letAITurn();
                 }
             }
         };
@@ -228,5 +238,68 @@ public class GameActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         for (int i = 0; i < lines.length; i++)
             savedInstanceState.putIntArray("lines" + i, lines[i]);
+    }
+
+    private void letAITurn() {
+        ImageView iv;
+        int freeI = 0, freeJ = 0;
+        for (int i = 1; i < lines.length - 2; i += 2) {
+            for (int j = 2; j < lines[i].length - 1; j += 2) {
+                if (lines[i][j] == 0) {
+                    if (freeI == 0 && freeJ == 0) {
+                        freeI = i;
+                        freeJ = j;
+                    }
+                    if ((lines[i-1][j-1] == 1 && lines[i][j-2] == 1 && lines[i+1][j-1] == 1) ||
+                        (lines[i-1][j+1] == 1 && lines[i][j+2] == 1 && lines[i+1][j+1] == 1)) {
+                        iv = findViewById(3000 + i * 10 + j);
+                        iv.callOnClick();
+                        return;
+                    }
+                }
+            }
+        }
+        for (int i = 2; i < lines.length - 1; i += 2) {
+            for (int j = 1; j < lines[i].length - 2; j += 2) {
+                if (lines[i][j] == 0) {
+                    if (freeI == 0 && freeJ == 0) {
+                        freeI = i;
+                        freeJ = j;
+                    }
+                    if ((lines[i-1][j-1] == 1 && lines[i-2][j] == 1 && lines[i-1][j+1] == 1) ||
+                        (lines[i+1][j-1] == 1 && lines[i+2][j] == 1 && lines[i+1][j+1] == 1)) {
+                        iv = findViewById(3000 + i * 10 + j);
+                        iv.callOnClick();
+                        return;
+                    }
+                }
+            }
+        }
+        for (int i = 1; i < lines.length - 2; i += 2) {
+            for (int j = 2; j < lines[i].length - 1; j += 2) {
+                if (lines[i][j] == 0) {
+                    if (lines[i-1][j-1] == 0 && lines[i-1][j+1] == 0 &&
+                        lines[i+1][j-1] == 0 && lines[i+1][j+1] == 0) {
+                        iv = findViewById(3000 + i * 10 + j);
+                        iv.callOnClick();
+                        return;
+                    }
+                }
+            }
+        }
+        for (int i = 2; i < lines.length - 1; i += 2) {
+            for (int j = 1; j < lines[i].length - 2; j += 2) {
+                if (lines[i][j] == 0) {
+                    if (lines[i-1][j-1] == 0 && lines[i+1][j-1] == 0 &&
+                        lines[i-1][j+1] == 0 && lines[i+1][j+1] == 0) {
+                        iv = findViewById(3000 + i * 10 + j);
+                        iv.callOnClick();
+                        return;
+                    }
+                }
+            }
+        }
+        iv = findViewById(3000 + freeI * 10 + freeJ);
+        iv.callOnClick();
     }
 }
