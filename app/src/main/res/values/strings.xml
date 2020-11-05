@@ -1,15 +1,26 @@
 <resources>
     <string name="app_name">The Rhombus</string>
     <string name="title">The Rhombus</string>
-    <string name="startButtonText">Start</string>
-    <string name="mainActivityLabel">MainActivity</string>
-    <string name="menuActivityLabel">MenuActivity</string>
-    <string name="button1Text">Campaign</string>
-    <string name="button2Text">Custom</string>
-    <string name="button3Text">Settings</string>
-    <string name="button4Text">Exit</string>
-    <string name="campaign">Campaign</string>
-    <string name="backButtonText">Back</string>
+    <!-- Threshold -->
+    <string name="thresholdCaption">The Rhombus</string>
+    <string name="thresholdStartButton">Start</string>
+    <!-- Authorise -->
+    <string name="authoriseCaption">Authorisation</string>
+    <string name="authoriseNickname">Nickname:</string>
+    <string name="authoriseAcceptButton">Accept</string>
+    <!-- MainMenu -->
+    <string name="mainMenuCaption">The Rhombus</string>
+    <string name="mainMenuButton1">Campaign</string>
+    <string name="mainMenuButton2">Custom</string>
+    <string name="mainMenuButton3">Settings</string>
+    <string name="mainMenuButton4">Exit</string>
+    <string name="mainMenuBackButton">Back</string>
+    <!-- Campaign -->
+    <string name="campaignCaption">Campaign</string>
+    <!-- CustomGame -->
+    <!-- Shop -->
+    <!-- Settings -->
+    <!-- Game -->
     <string name="zeroGamePointsOne">0</string>
     <string name="dotsGamePoints">:</string>
     <string name="zeroGamePointsTwo">0</string>
@@ -29,22 +40,5 @@
     <string name="cBT14">14</string>
     <string name="cBT15">15</string>
     <string name="cBT16">16</string>
-    <!-- string-array name="companyButtonText">
-        <item>@string/cBT1</item>
-        <item>@string/cBT2</item>
-        <item>@string/cBT3</item>
-        <item>@string/cBT4</item>
-        <item>@string/cBT5</item>
-        <item>@string/cBT6</item>
-        <item>@string/cBT7</item>
-        <item>@string/cBT8</item>
-        <item>@string/cBT9</item>
-        <item>@string/cBT10</item>
-        <item>@string/cBT11</item>
-        <item>@string/cBT12</item>
-        <item>@string/cBT13</item>
-        <item>@string/cBT14</item>
-        <item>@string/cBT15</item>
-        <item>@string/cBT16</item>
-    </string-array-->
+    <string name="settingsText1">Player image</string>
 </resources>

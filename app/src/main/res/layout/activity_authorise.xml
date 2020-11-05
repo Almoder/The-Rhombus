@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/authoriseBackground"
+    tools:context=".Authorise">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/authoriseCaption"
+                android:textSize="@dimen/authoriseCaptionTextSize"
+                android:textColor="@color/authoriseCaptionText"
+                android:layout_marginBottom="@dimen/authoriseCaptionMarginBottom" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/authoriseNickname"
+                android:textSize="@dimen/authoriseNicknameTextSize"
+                android:textColor="@color/authoriseNicknameText" />
+            <EditText
+                android:id="@+id/nicknameEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="@dimen/authoriseNicknameEditTextSize"
+                android:textColor="@color/authoriseNicknameEditText" />
+            <Button
+                android:id="@+id/acceptButton"
+                android:background="@color/authoriseAcceptButtonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/authoriseAcceptButton"
+                android:textSize="@dimen/authoriseAcceptButtonTextSize"
+                android:textColor="@color/authoriseAcceptButtonText"
+                android:onClick="acceptButtonClick" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

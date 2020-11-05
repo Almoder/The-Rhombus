@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/menuActivityBack"
-    tools:context=".MenuActivity">
+    android:background="@color/mainMenuBackground"
+    tools:context=".MainMenu">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fillViewport="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,64 +17,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="256dp"
                 android:layout_height="64dp"
                 android:layout_marginBottom="4dp"
                 android:text="@string/title"
                 android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
+                android:textColor="@color/mainMenuCaptionText"
                 android:textSize="40sp" />
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="256dp"
-                android:layout_height="64dp"
-                android:background="@color/menuActivityButton"
-                android:onClick="onButton1Click"
-                android:text="@string/button1Text"
-                android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
-                android:textSize="32sp" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="256dp"
-                android:layout_height="64dp"
-                android:background="@color/menuActivityButton"
-                android:onClick="onButton2Click"
-                android:text="@string/button2Text"
-                android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
-                android:textSize="32sp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="256dp"
-                android:layout_height="64dp"
-                android:background="@color/menuActivityButton"
-                android:onClick="onButton3Click"
-                android:text="@string/button3Text"
-                android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
-                android:textSize="32sp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="256dp"
-                android:layout_height="64dp"
-                android:background="@color/menuActivityButton"
-                android:onClick="onButton4Click"
-                android:text="@string/button4Text"
-                android:textAlignment="center"
-                android:textColor="@color/mainActivityText"
-                android:textSize="32sp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

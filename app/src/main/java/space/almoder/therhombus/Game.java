@@ -1,6 +1,5 @@
 package space.almoder.therhombus;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -12,19 +11,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-public class GameActivity extends AppCompatActivity {
+public class Game extends AppCompatActivity {
     private int[][] lines;
-    private int lid, turn = 0, pOne = 0, pTwo = 0;
+    private int turn = 0, pOne = 0, pTwo = 0;
     private boolean addition = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        lid = getIntent().getIntExtra("levelId", CompanyActivity.getLevelId());
+        int lid = getIntent().getIntExtra("levelId", Campaign.getLevelId());
         int rows = getResources().getInteger(getResources().getIdentifier("field" + lid + "rows", "integer", getPackageName()));
         int cols = getResources().getInteger(getResources().getIdentifier("field" + lid + "cols", "integer", getPackageName()));
         int[][] indexes = new int[rows][cols];
@@ -32,21 +28,9 @@ public class GameActivity extends AppCompatActivity {
         for (int i = 0; i < rows; i++) {
             indexes[i] = getResources().getIntArray(getResources().getIdentifier("f" + lid + "_" + (i + 1), "array", getPackageName()));
         }
-        /*
-        TextView tv1 = findViewById(R.id.pOnePTV);
-        TextView tv2 = findViewById(R.id.pTwoPTV);
-        tv1.setText(String.valueOf(pOne));
-        tv2.setText(String.valueOf(pTwo));
-         */
         TableLayout field = findViewById(R.id.field);
-        int /*eDot, eLnh, eLnv, eRct,*/ fDot, fLnh, fLnv, fRct, bnHl, bnVl;
+        int fDot, fLnh, fLnv, fRct, bnHl, bnVl;
         if (getResources().getInteger(getResources().getIdentifier("field" + lid + "colors", "integer", getPackageName())) == 0) {
-            /*
-            eDot = getResources().getColor(R.color.eDot);
-            eLnh = getResources().getColor(R.color.eLnh);
-            eLnv = getResources().getColor(R.color.eLnv);
-            eRct = getResources().getColor(R.color.eRct);
-             */
             fDot = getResources().getColor(R.color.fDot);
             fLnh = getResources().getColor(R.color.fLnh);
             fLnv = getResources().getColor(R.color.fLnv);
@@ -55,12 +39,6 @@ public class GameActivity extends AppCompatActivity {
             bnVl = getResources().getColor(R.color.bnVl);
         }
         else {
-            /*
-            eDot = getResources().getColor(getResources().getIdentifier("eDot" + lid, "color", getPackageName()));
-            eLnh = getResources().getColor(getResources().getIdentifier("eLnh" + lid, "color", getPackageName()));
-            eLnv = getResources().getColor(getResources().getIdentifier("eLnv" + lid, "color", getPackageName()));
-            eRct = getResources().getColor(getResources().getIdentifier("eRct" + lid, "color", getPackageName()));
-             */
             fDot = getResources().getColor(getResources().getIdentifier("fDot" + lid, "color", getPackageName()));
             fLnh = getResources().getColor(getResources().getIdentifier("fLnh" + lid, "color", getPackageName()));
             fLnv = getResources().getColor(getResources().getIdentifier("fLnv" + lid, "color", getPackageName()));
@@ -82,25 +60,21 @@ public class GameActivity extends AppCompatActivity {
                 TableRow.LayoutParams ivParams;
                 switch (indexes[i][j]) {
                     case 0:
-                        //iv.setBackgroundColor(eDot);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(minWD, minWD);
                         lines[i][j] = -1;
                         break;
                     case 1:
-                        //iv.setBackgroundColor(eLnh);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(maxWD, minWD);
                         lines[i][j] = -1;
                         break;
                     case 2:
-                        //iv.setBackgroundColor(eLnv);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(minWD, maxWD);
                         lines[i][j] = -1;
                         break;
                     case 3:
-                        //iv.setBackgroundColor(eRct);
                         iv.setImageResource(R.drawable.empty);
                         ivParams = new TableRow.LayoutParams(maxWD, maxWD);
                         lines[i][j] = -1;
@@ -126,12 +100,10 @@ public class GameActivity extends AppCompatActivity {
                         break;
                     case 8:
                         iv.setBackgroundColor(bnHl);
-                        //iv.setOnClickListener(getLineOnClick(iv));
                         ivParams = new TableRow.LayoutParams(maxWD, minWD);
                         break;
                     case 9:
                         iv.setBackgroundColor(bnVl);
-                        //iv.setOnClickListener(getLineOnClick(iv));
                         ivParams = new TableRow.LayoutParams(minWD, maxWD);
                         break;
                     default:
@@ -192,6 +164,7 @@ public class GameActivity extends AppCompatActivity {
                     }
                 }
             }
+            addition = savedInstanceState.getBoolean("addition");
         }
     }
 
@@ -200,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 iv.setEnabled(false);
-                int ivId = (int)iv.getId() - 3300, rem = ivId % 10;
+                int ivId = (iv.getId()) - 3300, rem = ivId % 10;
                 ImageView ivLine = findViewById(3000 + ivId);
                 ivLine.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.player1Color : R.color.player2Color));
                 lines[(ivId - rem) / 10][rem] = turn == 0 ? 1 : 2;
@@ -221,10 +194,6 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-
-    public void onPauseClick(View view) {
-
     }
 
     private boolean checkLines() {
@@ -258,6 +227,7 @@ public class GameActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
         for (int i = 0; i < lines.length; i++)
             savedInstanceState.putIntArray("lines" + i, lines[i]);
+        savedInstanceState.putBoolean("addition", addition);
     }
 
     private void letAITurn() {

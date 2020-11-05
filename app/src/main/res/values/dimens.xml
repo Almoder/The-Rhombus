@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="companyButtonPortraitSize">84dp</dimen>
-    <dimen name="companyButtonPortraitTextSize">24sp</dimen>
-    <dimen name="companyButtonLandscapeSize">60dp</dimen>
-    <dimen name="companyButtonLandscapeTextSize">12sp</dimen>
+    <!-- Threshold -->
+    <dimen name="thresholdCaptionTextSize">40sp</dimen>
+    <dimen name="thresholdCaptionMarginBottom">40sp</dimen>
+    <dimen name="thresholdStartButtonTextSize">32sp</dimen>
+    <dimen name="thresholdStartButtonPadding">8sp</dimen>
+    <!-- Authorise -->
+    <dimen name="authoriseCaptionTextSize">40sp</dimen>
+    <dimen name="authoriseCaptionMarginBottom">40sp</dimen>
+    <dimen name="authoriseNicknameTextSize">32sp</dimen>
+    <dimen name="authoriseNicknameEditTextSize">32sp</dimen>
+    <dimen name="authoriseAcceptButtonTextSize">32sp</dimen>
+    <!-- MainMenu -->
+    <dimen name="mainMenuCaptionTextSize">40sp</dimen>
+    <dimen name="mainMenuCaptionMarginBottom">40sp</dimen>
+    <dimen name="mainMenuButtonTextSize">16sp</dimen>
+    <dimen name="mainMenuBackButtonTextSize">32sp</dimen>
+    <!-- Campaign -->
+    <dimen name="campaignButtonPortraitSize">32sp</dimen>
+    <dimen name="campaignButtonPortraitTextSize">24sp</dimen>
+    <dimen name="campaignButtonLandscapeSize">79sp</dimen>
+    <dimen name="campaignButtonLandscapeTextSize">19sp</dimen>
+    <!-- CustomGame -->
+    <!-- Shop -->
+    <!-- Settings -->
+    <!-- Game -->
     <dimen name="gamePointsSize">32sp</dimen>
+    <dimen name="settingsTextSize">30sp</dimen>
     <!-- field1 -->
     <dimen name="f1minWD">8dp</dimen>
     <dimen name="f1maxWD">56dp</dimen>

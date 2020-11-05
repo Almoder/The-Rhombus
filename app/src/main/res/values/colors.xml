@@ -3,21 +3,44 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="mainActivityBack">#FFFFFF</color>
-    <color name="mainActivityText">#000000</color>
-    <color name="mainActivityButton">#FFFFFF</color>
-    <color name="menuActivityBack">#FFFFFF</color>
-    <color name="menuActivityText">#000000</color>
-    <color name="menuActivityButton">#FFFFFF</color>
-    <color name="companyActivityBack">#FFFFFF</color>
-    <color name="companyActivityText">#000000</color>
-    <color name="companyActivityButtonBack">#FFFFFF</color>
-    <color name="companyActivityButtonText">#000000</color>
-    <color name="gameActivityBack">#FFFFFF</color>
-    <color name="gameActivityGrid">#000000</color>
-    <color name="gameActivityPoints">#000000</color>
-    <color name="player1Color">#0000FF</color>
-    <color name="player2Color">#00FF00</color>
+    <!-- Threshold -->
+    <color name="thresholdBackground">#FFF</color>
+    <color name="thresholdCaptionText">#000</color>
+    <color name="thresholdStartButtonText">#000</color>
+    <color name="thresholdStartButtonBack">#FFF</color>
+    <!-- Authorise -->
+    <color name="authoriseBackground">#FFF</color>
+    <color name="authoriseCaptionText">#000</color>
+    <color name="authoriseNicknameText">#000</color>
+    <color name="authoriseNicknameEditText">#000</color>
+    <color name="authoriseNicknameEditBack">#00F</color>
+    <color name="authoriseAcceptButtonText">#000</color>
+    <color name="authoriseAcceptButtonBack">#FFF</color>
+    <!-- MainMenu -->
+    <color name="mainMenuBackground">#FFF</color>
+    <color name="mainMenuCaptionText">#000</color>
+    <color name="mainMenuButtonText">#000</color>
+    <color name="mainMenuButtonBack">#FFF</color>
+    <color name="mainMenuBackButtonText">#000</color>
+    <color name="mainMenuBackButtonBack">#FFF</color>
+    <!-- Campaign -->
+    <color name="campaignBackground">#FFF</color>
+    <color name="campaignCaptionText">#000</color>
+    <color name="campaignButtonText">#000</color>
+    <color name="campaignButtonBack">#FFF</color>
+    <!-- CustomGame -->
+    <color name="customGameBackground">#FFF</color>
+    <color name="customGameCaptionText">#000</color>
+    <color name="customGameButtonText">#000</color>
+    <color name="customGameButtonBack">#FFF</color>
+    <!-- Shop -->
+    <!-- Settings -->
+    <!-- Game -->
+    <color name="gameBackground">#FFF</color>
+    <color name="gameActivityGrid">#000</color>
+    <color name="gameActivityPoints">#000</color>
+    <color name="player1Color">#00F</color>
+    <color name="player2Color">#0F0</color>
     <!-- Default Field Colors -->
     <!--
     <color name="eDot">#FFFFFF</color>
@@ -25,12 +48,12 @@
     <color name="eLnv">#FFFFFF</color>
     <color name="eRct">#FFFFFF</color>
     -->
-    <color name="fDot">#000000</color>
-    <color name="fLnh">#000000</color>
-    <color name="fLnv">#000000</color>
-    <color name="fRct">#FFFFFF</color>
-    <color name="bnHl">#666666</color>
-    <color name="bnVl">#666666</color>
+    <color name="fDot">#000</color>
+    <color name="fLnh">#000</color>
+    <color name="fLnv">#000</color>
+    <color name="fRct">#FFF</color>
+    <color name="bnHl">#666</color>
+    <color name="bnVl">#666</color>
     <!-- Field 3 Colors -->
     <!--
     <color name="eDot3">#FFFFFF</color>
@@ -38,10 +61,12 @@
     <color name="eLnv3">#FFFFFF</color>
     <color name="eRct3">#FFFFFF</color>
      -->
-    <color name="fDot3">#000000</color>
-    <color name="fLnh3">#000000</color>
-    <color name="fLnv3">#000000</color>
-    <color name="fRct3">#FF0000</color>
-    <color name="bnHl3">#666666</color>
-    <color name="bnVl3">#666666</color>
+    <color name="fDot3">#000</color>
+    <color name="fLnh3">#000</color>
+    <color name="fLnv3">#000</color>
+    <color name="fRct3">#F00</color>
+    <color name="bnHl3">#666</color>
+    <color name="bnVl3">#666</color>
+
+    <color name="settingsTextColor">#000</color>
 </resources>
