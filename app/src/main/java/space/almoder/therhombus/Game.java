@@ -134,8 +134,11 @@ public class Game extends AppCompatActivity {
             buttonField.addView(tr);
         }
         if (savedInstanceState != null) {
-            for (int i = 0; i < rows; i++) lines[i] = savedInstanceState.getIntArray("lines" + i);
-            for (int i = 1; i <= lines.length - 2; i += 2)
+            for (int i = 0; i < rows; i++) {
+                lines[i] = savedInstanceState.getIntArray("lines" + i);
+            }
+            for (int i = 1; i <= lines.length - 2; i += 2) {
+                if (lines[i] == null) throw new NullPointerException();
                 for (int j = 1; j <= lines[i].length - 2; j += 2) {
                     int index = lines[i][j];
                     if (index > 0) {
@@ -153,6 +156,7 @@ public class Game extends AppCompatActivity {
                         }
                     }
                 }
+            }
             for (int i = 0; i < lines.length; i++) {
                 if (lines[i] == null) throw new NullPointerException();
                 for (int j = 0; j < lines[i].length; j++) {

@@ -20,6 +20,7 @@
     <!-- CustomGame -->
     <!-- Shop -->
     <!-- Settings -->
+    <string name="settingsText1">Player image</string>
     <!-- Game -->
     <string name="zeroGamePointsOne">0</string>
     <string name="dotsGamePoints">:</string>
@@ -40,5 +41,4 @@
     <string name="cBT14">14</string>
     <string name="cBT15">15</string>
     <string name="cBT16">16</string>
-    <string name="settingsText1">Player image</string>
 </resources>

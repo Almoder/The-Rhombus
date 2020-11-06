@@ -9,21 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CustomGame"></activity>
         <activity
             android:name=".Threshold"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Authorise"/>
+        <activity android:name=".Authorise" />
         <activity android:name=".MainMenu" />
         <activity android:name=".Campaign" />
         <activity android:name=".Settings" />
         <activity
             android:name=".Game"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -33,12 +33,16 @@
     <color name="customGameCaptionText">#000</color>
     <color name="customGameButtonText">#000</color>
     <color name="customGameButtonBack">#FFF</color>
-    <!-- Shop -->
     <!-- Settings -->
+    <color name="settingsBackground">#FFF</color>
+    <color name="settingsTextColor">#000</color>
+    <!-- Shop -->
+    <color name="shopBackground">#000</color>
+    <color name="shopTextColor">#000</color>
     <!-- Game -->
     <color name="gameBackground">#FFF</color>
-    <color name="gameActivityGrid">#000</color>
-    <color name="gameActivityPoints">#000</color>
+    <color name="gameGrid">#000</color>
+    <color name="gamePoints">#000</color>
     <color name="player1Color">#00F</color>
     <color name="player2Color">#0F0</color>
     <!-- Default Field Colors -->
@@ -67,6 +71,4 @@
     <color name="fRct3">#F00</color>
     <color name="bnHl3">#666</color>
     <color name="bnVl3">#666</color>
-
-    <color name="settingsTextColor">#000</color>
 </resources>

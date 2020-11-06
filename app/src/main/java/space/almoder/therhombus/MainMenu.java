@@ -46,8 +46,12 @@ public class MainMenu extends AppCompatActivity {
             case 1001:
                 intent = new Intent(this, Campaign.class);
                 break;
-            case 1002:  //customGame
-            case 1003:  //settings
+            case 1002:
+                intent = new Intent(this, CustomGame.class);
+                break;
+            case 1003:
+                intent = new Intent(this, Settings.class);
+                break;
             default:
                 intent = null;
                 break;
@@ -55,22 +59,12 @@ public class MainMenu extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case 1001:
-                        startActivity(intent);
-                        break;
-                    case 1002:
-                        //customGame
-                        break;
-                    case 1003:
-                        //settings
-                        break;
-                    case 1004:
-                        Threshold.setFin(true);
-                        finish();
-                        break;
-                    default:
-                        break;
+                if (intent != null) {
+                    startActivity(intent);
+                }
+                else {
+                    Threshold.setFin(true);
+                    finish();
                 }
             }
         };

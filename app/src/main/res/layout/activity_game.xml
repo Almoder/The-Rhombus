@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/zeroGamePointsOne"
-                    android:textColor="@color/gameActivityPoints"
+                    android:textColor="@color/gamePoints"
                     android:textSize="@dimen/gamePointsSize"/>
 
                 <TextView
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/dotsGamePoints"
-                    android:textColor="@color/gameActivityPoints"
+                    android:textColor="@color/gamePoints"
                     android:textSize="@dimen/gamePointsSize"/>
 
                 <TextView
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/zeroGamePointsTwo"
-                    android:textColor="@color/gameActivityPoints"
+                    android:textColor="@color/gamePoints"
                     android:textSize="@dimen/gamePointsSize"/>
             </LinearLayout>
 
