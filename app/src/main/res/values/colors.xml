@@ -43,8 +43,8 @@
     <color name="gameBackground">#FFF</color>
     <color name="gameGrid">#000</color>
     <color name="gamePoints">#000</color>
-    <color name="player1Color">#00F</color>
-    <color name="player2Color">#0F0</color>
+    <color name="p1Color">#00F</color>
+    <color name="p2Color">#0F0</color>
     <!-- Default Field Colors -->
     <!--
     <color name="eDot">#FFFFFF</color>
@@ -58,6 +58,14 @@
     <color name="fRct">#FFF</color>
     <color name="bnHl">#666</color>
     <color name="bnVl">#666</color>
+    <array name="f0colors">
+        <item>@color/fDot</item>
+        <item>@color/fLnh</item>
+        <item>@color/fLnv</item>
+        <item>@color/fRct</item>
+        <item>@color/bnHl</item>
+        <item>@color/bnVl</item>
+    </array>
     <!-- Field 3 Colors -->
     <!--
     <color name="eDot3">#FFFFFF</color>
@@ -71,4 +79,12 @@
     <color name="fRct3">#F00</color>
     <color name="bnHl3">#666</color>
     <color name="bnVl3">#666</color>
+    <array name="f3colors">
+        <item>@color/fDot3</item>
+        <item>@color/fLnh3</item>
+        <item>@color/fLnv3</item>
+        <item>@color/fRct3</item>
+        <item>@color/bnHl3</item>
+        <item>@color/bnVl3</item>
+    </array>
 </resources>

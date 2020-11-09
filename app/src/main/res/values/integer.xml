@@ -11,9 +11,9 @@
     <integer name="bnHl">8</integer>
     <integer name="bnVl">9</integer>
     <!-- Field 1 -->
-    <integer name="field1rows">11</integer>
-    <integer name="field1cols">11</integer>
-    <integer name="field1colors">0</integer>
+    <integer name="f1rows">11</integer>
+    <integer name="f1cols">11</integer>
+    <integer name="f1colors">0</integer>
     <array name="f1_1">
         <item>@integer/eDot</item>
         <item>@integer/eLnh</item>
@@ -158,9 +158,9 @@
         <item>@integer/eDot</item>
     </array>
     <!-- Field 2 -->
-    <integer name="field2rows">11</integer>
-    <integer name="field2cols">11</integer>
-    <integer name="field2colors">0</integer>
+    <integer name="f2rows">11</integer>
+    <integer name="f2cols">11</integer>
+    <integer name="f2colors">0</integer>
     <array name="f2_1">
         <item>@integer/eDot</item>
         <item>@integer/eLnh</item>
@@ -305,9 +305,9 @@
         <item>@integer/eDot</item>
     </array>
     <!-- Field 3 -->
-    <integer name="field3rows">11</integer>
-    <integer name="field3cols">11</integer>
-    <integer name="field3colors">3</integer>
+    <integer name="f3rows">11</integer>
+    <integer name="f3cols">11</integer>
+    <integer name="f3colors">3</integer>
     <array name="f3_1">
         <item>@integer/fDot</item>
         <item>@integer/fLnh</item>
@@ -452,9 +452,9 @@
         <item>@integer/eDot</item>
     </array>
     <!-- Field 4 -->
-    <integer name="field4rows">11</integer>
-    <integer name="field4cols">11</integer>
-    <integer name="field4colors">0</integer>
+    <integer name="f4rows">11</integer>
+    <integer name="f4cols">11</integer>
+    <integer name="f4colors">0</integer>
     <array name="f4_1">
         <item>@integer/fDot</item>
         <item>@integer/fLnh</item>
@@ -599,9 +599,9 @@
         <item>@integer/fDot</item>
     </array>
     <!-- Field 5 -->
-    <integer name="field5rows">13</integer>
-    <integer name="field5cols">11</integer>
-    <integer name="field5colors">0</integer>
+    <integer name="f5rows">13</integer>
+    <integer name="f5cols">11</integer>
+    <integer name="f5colors">0</integer>
     <array name="f5_1">
         <item>@integer/eDot</item>
         <item>@integer/eLnh</item>
@@ -772,9 +772,9 @@
         <item>@integer/eDot</item>
     </array>
     <!-- Field 6 -->
-    <integer name="field6rows">13</integer>
-    <integer name="field6cols">11</integer>
-    <integer name="field6colors">0</integer>
+    <integer name="f6rows">13</integer>
+    <integer name="f6cols">11</integer>
+    <integer name="f6colors">0</integer>
     <array name="f6_1">
         <item>@integer/fDot</item>
         <item>@integer/fLnh</item>
@@ -945,9 +945,9 @@
         <item>@integer/fDot</item>
     </array>
     <!-- Field 7 -->
-    <integer name="field7rows">15</integer>
-    <integer name="field7cols">11</integer>
-    <integer name="field7colors">0</integer>
+    <integer name="f7rows">15</integer>
+    <integer name="f7cols">11</integer>
+    <integer name="f7colors">0</integer>
     <array name="f7_1">
         <item>@integer/fDot</item>
         <item>@integer/fLnh</item>
@@ -1144,9 +1144,9 @@
         <item>@integer/fDot</item>
     </array>
     <!-- Field 8 -->
-    <integer name="field8rows">19</integer>
-    <integer name="field8cols">11</integer>
-    <integer name="field8colors">0</integer>
+    <integer name="f8rows">19</integer>
+    <integer name="f8cols">11</integer>
+    <integer name="f8colors">0</integer>
     <array name="f8_1">
         <item>@integer/fDot</item>
         <item>@integer/fLnh</item>
