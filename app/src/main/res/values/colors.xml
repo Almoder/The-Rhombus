@@ -36,6 +36,7 @@
     <!-- Settings -->
     <color name="settingsBackground">#FFF</color>
     <color name="settingsTextColor">#000</color>
+    <color name="settingsPlayerImagesBack">#FFF</color>
     <!-- Shop -->
     <color name="shopBackground">#000</color>
     <color name="shopTextColor">#000</color>
@@ -67,12 +68,6 @@
         <item>@color/bnVl</item>
     </array>
     <!-- Field 3 Colors -->
-    <!--
-    <color name="eDot3">#FFFFFF</color>
-    <color name="eLnh3">#FFFFFF</color>
-    <color name="eLnv3">#FFFFFF</color>
-    <color name="eRct3">#FFFFFF</color>
-     -->
     <color name="fDot3">#000</color>
     <color name="fLnh3">#000</color>
     <color name="fLnv3">#000</color>

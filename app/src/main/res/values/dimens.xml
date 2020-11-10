@@ -24,6 +24,9 @@
     <!-- CustomGame -->
     <!-- Shop -->
     <!-- Settings -->
+    <dimen name="settingsPlayerImagesWH">64sp</dimen>
+    <dimen name="settingsPlayerImagesPadding">16sp</dimen>
+    <dimen name="settingsPlayerImagesMargin">16sp</dimen>
     <!-- Game -->
     <dimen name="gamePointsSize">32sp</dimen>
     <dimen name="settingsTextSize">30sp</dimen>
@@ -51,4 +54,19 @@
     <!-- field8 -->
     <dimen name="f8minWD">8dp</dimen>
     <dimen name="f8maxWD">56dp</dimen>
+    <!-- field9 -->
+    <dimen name="f9minWD">8dp</dimen>
+    <dimen name="f9maxWD">56dp</dimen>
+    <!-- field10 -->
+    <dimen name="f10minWD">8dp</dimen>
+    <dimen name="f10maxWD">56dp</dimen>
+    <!-- field11 -->
+    <dimen name="f11minWD">8dp</dimen>
+    <dimen name="f11maxWD">56dp</dimen>
+    <!-- field12 -->
+    <dimen name="f12minWD">8dp</dimen>
+    <dimen name="f12maxWD">56dp</dimen>
+    <!-- field13 -->
+    <dimen name="f13minWD">8dp</dimen>
+    <dimen name="f13maxWD">56dp</dimen>
 </resources>

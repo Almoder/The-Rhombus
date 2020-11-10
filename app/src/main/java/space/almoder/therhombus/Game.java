@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 public class Game extends AppCompatActivity {
     private int[][] lines;
     private int turn = 0, pOne = 0, pTwo = 0;
@@ -20,12 +22,19 @@ public class Game extends AppCompatActivity {
         int lid = getIntent().getIntExtra("levelId", Campaign.getLevelId());
 
         if (savedInstanceState != null) {
+            lines = new int[savedInstanceState.getInt("linesLength")][];
             for (int i = 0; i < lines.length; i++) {
                 lines[i] = savedInstanceState.getIntArray("lines" + i);
             }
             FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field), lines);
             fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
             addition = savedInstanceState.getBoolean("addition");
+            pOne = savedInstanceState.getInt("pOne");
+            pTwo = savedInstanceState.getInt("pTwo");
+            TextView tv1 = findViewById(R.id.pOnePTV);
+            TextView tv2 = findViewById(R.id.pTwoPTV);
+            tv1.setText(String.valueOf(pOne));
+            tv2.setText(String.valueOf(pTwo));
         }
         else {
             FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field));
@@ -91,9 +100,12 @@ public class Game extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("linesLength", lines.length);
         for (int i = 0; i < lines.length; i++)
             savedInstanceState.putIntArray("lines" + i, lines[i]);
         savedInstanceState.putBoolean("addition", addition);
+        savedInstanceState.putInt("pOne", pOne);
+        savedInstanceState.putInt("pTwo", pTwo);
     }
 
     private void letAITurn() {

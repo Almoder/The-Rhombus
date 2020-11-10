@@ -25,7 +25,8 @@ public class Threshold extends AppCompatActivity {
     }
 
     public void startButtonClick(View view) {
-        startActivity(new Intent(this, Authorise.class));
+        //startActivity(new Intent(this, Authorise.class));
+        startActivity(new Intent(this, MainMenu.class));
     }
 
     public static boolean getFin() {

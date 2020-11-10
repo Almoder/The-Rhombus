@@ -30,6 +30,7 @@ public class FieldBuilder {
         colors = rm.getFieldColors();
         minWD = rm.getMinWD();
         maxWD = rm.getMaxWD();
+        buildField(tl);
     }
 
     private void buildField(TableLayout tl) {
