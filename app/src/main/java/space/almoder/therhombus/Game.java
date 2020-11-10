@@ -24,22 +24,22 @@ public class Game extends AppCompatActivity {
                 lines[i] = savedInstanceState.getIntArray("lines" + i);
             }
             FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field), lines);
-            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick(null));
+            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
             addition = savedInstanceState.getBoolean("addition");
         }
         else {
             FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field));
-            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick(null));
+            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
             lines = fb.getLines();
         }
     }
 
-    View.OnClickListener getLineOnClick(final ImageView iv) {
+    View.OnClickListener getLineOnClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iv.setEnabled(false);
-                int ivId = (iv.getId()) - 3300, rem = ivId % 10;
+                v.setEnabled(false);
+                int ivId = (v.getId()) - 3300, rem = ivId % 10;
                 ImageView ivLine = findViewById(3000 + ivId);
                 ivLine.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.p1Color : R.color.p2Color));
                 lines[(ivId - rem) / 10][rem] = turn == 0 ? 1 : 2;
