@@ -24,9 +24,12 @@
     <!-- CustomGame -->
     <!-- Shop -->
     <!-- Settings -->
-    <dimen name="settingsPlayerImagesWH">64sp</dimen>
-    <dimen name="settingsPlayerImagesPadding">16sp</dimen>
-    <dimen name="settingsPlayerImagesMargin">16sp</dimen>
+    <dimen name="settingsTextView1Margin">16sp</dimen>
+    <dimen name="settingsPlayerImageViewWH">128sp</dimen>
+    <dimen name="settingsPlayerImageViewMargin">16sp</dimen>
+    <!-- PlayerImages -->
+    <dimen name="playerImagesTableMargin">8sp</dimen>
+    <dimen name="playerImageViewHW">109sp</dimen>
     <!-- Game -->
     <dimen name="gamePointsSize">32sp</dimen>
     <dimen name="settingsTextSize">30sp</dimen>

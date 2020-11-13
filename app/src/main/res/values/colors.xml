@@ -36,7 +36,7 @@
     <!-- Settings -->
     <color name="settingsBackground">#FFF</color>
     <color name="settingsTextColor">#000</color>
-    <color name="settingsPlayerImagesBack">#FFF</color>
+    <color name="settingsPlayerImageViewBack">#ABC</color>
     <!-- Shop -->
     <color name="shopBackground">#000</color>
     <color name="shopTextColor">#000</color>

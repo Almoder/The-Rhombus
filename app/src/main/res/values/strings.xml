@@ -21,6 +21,7 @@
     <!-- Shop -->
     <!-- Settings -->
     <string name="settingsText1">Player image</string>
+    <string name="settingsPlayerImageViewDescription">Player image</string>
     <!-- Game -->
     <string name="zeroGamePointsOne">0</string>
     <string name="dotsGamePoints">:</string>

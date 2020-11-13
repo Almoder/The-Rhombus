@@ -36,8 +36,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        finish();
+        startActivity(new Intent(this, Threshold.class));
     }
 
     View.OnClickListener getButtonOnClick(final Button button) {
@@ -53,19 +52,14 @@ public class MainMenu extends AppCompatActivity {
                 intent = new Intent(this, Settings.class);
                 break;
             default:
-                intent = null;
+                Threshold.setFin(true);
+                intent = new Intent(this, Threshold.class);
                 break;
         }
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (intent != null) {
-                    startActivity(intent);
-                }
-                else {
-                    Threshold.setFin(true);
-                    finish();
-                }
+                startActivity(intent);
             }
         };
     }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,32 +16,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16sp"
+                android:layout_margin="@dimen/settingsTextView1Margin"
                 android:text="@string/settingsText1"
                 android:textSize="@dimen/settingsTextSize"
                 android:textColor="@color/settingsTextColor"/>
 
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:id="@+id/playerImages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/settingsPlayerImagesBack"
-                    android:paddingBottom="16sp"
-                    android:paddingStart="16sp"
-                    android:orientation="horizontal"
-                    tools:ignore="RtlSymmetry">
-
-                </LinearLayout>
-            </HorizontalScrollView>
+            <ImageView
+                android:id="@+id/playerImageView"
+                android:layout_width="@dimen/settingsPlayerImageViewWH"
+                android:layout_height="@dimen/settingsPlayerImageViewWH"
+                android:layout_marginStart="@dimen/settingsPlayerImageViewMargin"
+                android:layout_marginBottom="@dimen/settingsPlayerImageViewMargin"
+                android:background="@color/settingsPlayerImageViewBack"
+                android:contentDescription="@string/settingsPlayerImageViewDescription"
+                android:onClick="playerImageViewOnClick"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

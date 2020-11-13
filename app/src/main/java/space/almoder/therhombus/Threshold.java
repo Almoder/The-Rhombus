@@ -24,8 +24,12 @@ public class Threshold extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Threshold.this.finish();
+    }
+
     public void startButtonClick(View view) {
-        //startActivity(new Intent(this, Authorise.class));
         startActivity(new Intent(this, MainMenu.class));
     }
 

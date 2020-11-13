@@ -20,7 +20,6 @@ public class Game extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         int lid = getIntent().getIntExtra("levelId", Campaign.getLevelId());
-
         if (savedInstanceState != null) {
             lines = new int[savedInstanceState.getInt("linesLength")][];
             for (int i = 0; i < lines.length; i++) {
