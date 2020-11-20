@@ -56,7 +56,7 @@ public class FieldBuilder {
             tr.setLayoutParams(params);
             for (int j = 1; j < lines[i].length - 1; j++) {
                 ImageView iv = new ImageView(rm.getContext());
-                iv.setId(3300 + i * 10 + j);
+                iv.setId(3300 + i * indexes[0].length + j);
                 iv.setScaleType(ImageView.ScaleType.FIT_XY);
                 iv.setImageResource(R.drawable.empty);
                 TableRow.LayoutParams ivParams = new TableRow.LayoutParams((minWD + maxWD) / 2, (minWD + maxWD) / 2);
@@ -77,7 +77,7 @@ public class FieldBuilder {
 
     private ImageView makeImageView(int i, int j) {
         ImageView iv = new ImageView(rm.getContext());
-        iv.setId(3000 + i * 10 + j);
+        iv.setId(3000 + i * indexes[0].length + j);
         iv.setScaleType(ImageView.ScaleType.FIT_XY);
         TableRow.LayoutParams ivParams;
         switch (indexes[i][j]) {

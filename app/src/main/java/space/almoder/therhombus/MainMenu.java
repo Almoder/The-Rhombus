@@ -44,6 +44,7 @@ public class MainMenu extends AppCompatActivity {
         switch (button.getId()) {
             case 1001:
                 intent = new Intent(this, Campaign.class);
+                intent.putExtra("image", getIntent().getIntExtra("image", R.drawable.cross));
                 break;
             case 1002:
                 intent = new Intent(this, CustomGame.class);
@@ -53,13 +54,14 @@ public class MainMenu extends AppCompatActivity {
                 break;
             default:
                 Threshold.setFin(true);
-                intent = new Intent(this, Threshold.class);
+                intent = null;
                 break;
         }
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                if (intent != null) startActivity(intent);
+                finish();
             }
         };
     }

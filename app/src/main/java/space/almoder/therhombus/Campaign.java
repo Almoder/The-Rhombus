@@ -67,6 +67,7 @@ public class Campaign extends AppCompatActivity {
         Intent intent = new Intent(this, Game.class);
         setLevelId(getLevelId() - 2000);
         intent.putExtra("levelId", levelId);
+        intent.putExtra("image", getIntent().getIntExtra("image", R.drawable.cross));
         startActivity(intent);
     }
 

@@ -8,17 +8,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 public class Game extends AppCompatActivity {
     private int[][] lines;
-    private int turn = 0, pOne = 0, pTwo = 0;
+    private int turn = 0, pOne = 0, pTwo = 0, image;
     private boolean addition = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        image = getIntent().getIntExtra("image", R.drawable.cross);
         int lid = getIntent().getIntExtra("levelId", Campaign.getLevelId());
         if (savedInstanceState != null) {
             lines = new int[savedInstanceState.getInt("linesLength")][];
@@ -47,10 +46,10 @@ public class Game extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 v.setEnabled(false);
-                int ivId = (v.getId()) - 3300, rem = ivId % 10;
+                int ivId = (v.getId()) - 3300, rem = ivId % lines[0].length;
                 ImageView ivLine = findViewById(3000 + ivId);
                 ivLine.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.p1Color : R.color.p2Color));
-                lines[(ivId - rem) / 10][rem] = turn == 0 ? 1 : 2;
+                lines[(ivId - rem) / lines[0].length][rem] = turn == 0 ? 1 : 2;
                 boolean check = checkLines();
                 if (check) {
                     if (addition) {
@@ -72,13 +71,13 @@ public class Game extends AppCompatActivity {
 
     private boolean checkLines() {
         boolean point = false;
-        for(int i = 1; i <= lines.length - 2; i += 2) {
-            for (int j = 1; j <= lines[i].length - 2; j += 2) {
+        for(int i = 1; i < lines.length - 1; i += 2) {
+            for (int j = 1; j < lines[i].length - 1; j += 2) {
                 if (lines[i][j] > 0) continue;
                 if (lines[i - 1][j] > 0 && lines[i][j - 1] > 0 && lines[i + 1][j] > 0 && lines[i][j + 1] > 0) {
-                    ImageView iv = findViewById(3000 + i * 10 + j);
+                    ImageView iv = findViewById(3000 + i * lines[i].length + j);
                     lines[i][j] = turn == 0 ? 1 : 2;
-                    iv.setImageResource(lines[i][j] == 1 ? R.drawable.cross : R.drawable.circle);
+                    iv.setImageResource(lines[i][j] == 1 ? image : R.drawable.circle);
                     if (turn == 0) {
                         pOne++;
                         TextView tv = findViewById(R.id.pOnePTV);
@@ -119,7 +118,7 @@ public class Game extends AppCompatActivity {
                     }
                     if ((lines[i-1][j-1] > 0 && lines[i][j-2] > 0 && lines[i+1][j-1] > 0) ||
                         (lines[i-1][j+1] > 0 && lines[i][j+2] > 0 && lines[i+1][j+1] > 0)) {
-                        iv = findViewById(3300 + i * 10 + j);
+                        iv = findViewById(3300 + i * lines[0].length + j);
                         iv.callOnClick();
                         return;
                     }
@@ -135,7 +134,7 @@ public class Game extends AppCompatActivity {
                     }
                     if ((lines[i-1][j-1] > 0 && lines[i-2][j] > 0 && lines[i-1][j+1] > 0) ||
                         (lines[i+1][j-1] > 0 && lines[i+2][j] > 0 && lines[i+1][j+1] > 0)) {
-                        iv = findViewById(3300 + i * 10 + j);
+                        iv = findViewById(3300 + i * lines[0].length + j);
                         iv.callOnClick();
                         return;
                     }
@@ -147,7 +146,7 @@ public class Game extends AppCompatActivity {
                 if (lines[i][j] == 0) {
                     if (lines[i-1][j-1] == 0 && lines[i-1][j+1] == 0 &&
                         lines[i+1][j-1] == 0 && lines[i+1][j+1] == 0) {
-                        iv = findViewById(3300 + i * 10 + j);
+                        iv = findViewById(3300 + i * lines[0].length + j);
                         iv.callOnClick();
                         return;
                     }
@@ -159,7 +158,7 @@ public class Game extends AppCompatActivity {
                 if (lines[i][j] == 0) {
                     if (lines[i-1][j-1] == 0 && lines[i+1][j-1] == 0 &&
                         lines[i-1][j+1] == 0 && lines[i+1][j+1] == 0) {
-                        iv = findViewById(3300 + i * 10 + j);
+                        iv = findViewById(3300 + i * lines[0].length + j);
                         iv.callOnClick();
                         return;
                     }
@@ -167,7 +166,7 @@ public class Game extends AppCompatActivity {
             }
         }
         if (freeI != 0 && freeJ != 0) {
-            iv = findViewById(3300 + freeI * 10 + freeJ);
+            iv = findViewById(3300 + freeI * lines[0].length + freeJ);
             iv.callOnClick();
         }
     }

@@ -22,11 +22,14 @@ public class Settings extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(this, MainMenu.class));
+        Intent intent = new Intent(this, MainMenu.class);
+        intent.putExtra("image", getResources().getIdentifier(
+                "i" + getIntent().getIntExtra("imageID", 1),
+                "drawable", getPackageName()));
+        startActivity(intent);
     }
 
     public void playerImageViewOnClick(View view) {
         startActivity(new Intent(this, PlayerImages.class));
     }
-
 }

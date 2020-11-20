@@ -72,4 +72,13 @@
     <!-- field13 -->
     <dimen name="f13minWD">8dp</dimen>
     <dimen name="f13maxWD">56dp</dimen>
+    <!-- field14 -->
+    <dimen name="f14minWD">7dp</dimen>
+    <dimen name="f14maxWD">49dp</dimen>
+    <!-- field15 -->
+    <dimen name="f15minWD">7dp</dimen>
+    <dimen name="f15maxWD">49dp</dimen>
+    <!-- field16 -->
+    <dimen name="f16minWD">8dp</dimen>
+    <dimen name="f16maxWD">56dp</dimen>
 </resources>
