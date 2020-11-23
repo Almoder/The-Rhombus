@@ -3,21 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/campaignBackground"
     tools:context=".Campaign">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <!---->
 
         <LinearLayout
             android:gravity="center"
@@ -31,8 +29,8 @@
                 android:text="@string/campaignCaption"
                 android:textColor="@color/campaignCaptionText"
                 android:textAlignment="center"
-                android:textSize="40sp"
-                android:layout_marginBottom="4dp"/>
+                android:textSize="@dimen/campaignCaptionTextSize"
+                android:layout_marginBottom="@dimen/campaignCaptionTextSize"/>
 
             <TableLayout
                 android:id="@+id/tableLayout"

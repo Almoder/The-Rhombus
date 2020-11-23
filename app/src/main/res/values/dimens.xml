@@ -17,11 +17,18 @@
     <dimen name="mainMenuButtonTextSize">16sp</dimen>
     <dimen name="mainMenuBackButtonTextSize">32sp</dimen>
     <!-- Campaign -->
+    <dimen name="campaignCaptionTextSize">40sp</dimen>
+    <dimen name="campaignCaptionMarginBottom">40sp</dimen>
     <dimen name="campaignButtonPortraitSize">32sp</dimen>
     <dimen name="campaignButtonPortraitTextSize">24sp</dimen>
     <dimen name="campaignButtonLandscapeSize">79sp</dimen>
     <dimen name="campaignButtonLandscapeTextSize">19sp</dimen>
     <!-- CustomGame -->
+    <dimen name="customGameCaptionTextSize">40sp</dimen>
+    <dimen name="customGameCaptionMarginBottom">32sp</dimen>
+    <dimen name="customGamePadding">8sp</dimen>
+    <dimen name="customGameMarginStart">8sp</dimen>
+    <dimen name="customGameTextSize">32sp</dimen>
     <!-- Shop -->
     <!-- Settings -->
     <dimen name="settingsTextView1Margin">16sp</dimen>

@@ -12,6 +12,7 @@
     <integer name="fRct">7</integer>
     <integer name="bnHl">8</integer>
     <integer name="bnVl">9</integer>
+    <integer name="f0colors">0</integer>
     <!-- Field 1 -->
     <integer name="f1rows">11</integer>
     <integer name="f1cols">11</integer>

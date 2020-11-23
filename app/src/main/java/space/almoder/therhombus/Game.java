@@ -11,33 +11,71 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Game extends AppCompatActivity {
     private int[][] lines;
     private int turn = 0, pOne = 0, pTwo = 0, image;
-    private boolean addition = false;
+    private boolean addition = false, pveMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         image = getIntent().getIntExtra("image", R.drawable.cross);
-        int lid = getIntent().getIntExtra("levelId", Campaign.getLevelId());
-        if (savedInstanceState != null) {
-            lines = new int[savedInstanceState.getInt("linesLength")][];
-            for (int i = 0; i < lines.length; i++) {
-                lines[i] = savedInstanceState.getIntArray("lines" + i);
+        pveMode = getIntent().getBooleanExtra("pveMode", true);
+        int lid = getIntent().getIntExtra("levelId", 0);
+        if (lid != 0) {
+            if (savedInstanceState != null) {
+                lines = new int[savedInstanceState.getInt("linesLength")][];
+                for (int i = 0; i < lines.length; i++) {
+                    lines[i] = savedInstanceState.getIntArray("lines" + i);
+                }
+                FieldBuilder fb = new FieldBuilder(
+                        new ResourceManager(this, lid),
+                        (TableLayout) findViewById(R.id.field),
+                        lines);
+                fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                addition = savedInstanceState.getBoolean("addition");
+                pOne = savedInstanceState.getInt("pOne");
+                pTwo = savedInstanceState.getInt("pTwo");
+                TextView tv1 = findViewById(R.id.pOnePTV);
+                TextView tv2 = findViewById(R.id.pTwoPTV);
+                tv1.setText(String.valueOf(pOne));
+                tv2.setText(String.valueOf(pTwo));
             }
-            FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field), lines);
-            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
-            addition = savedInstanceState.getBoolean("addition");
-            pOne = savedInstanceState.getInt("pOne");
-            pTwo = savedInstanceState.getInt("pTwo");
-            TextView tv1 = findViewById(R.id.pOnePTV);
-            TextView tv2 = findViewById(R.id.pTwoPTV);
-            tv1.setText(String.valueOf(pOne));
-            tv2.setText(String.valueOf(pTwo));
+            else {
+                FieldBuilder fb = new FieldBuilder(
+                        new ResourceManager(this, lid),
+                        (TableLayout) findViewById(R.id.field));
+                fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                lines = fb.getLines();
+            }
         }
         else {
-            FieldBuilder fb = new FieldBuilder(new ResourceManager(this, lid), (TableLayout) findViewById(R.id.field));
-            fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
-            lines = fb.getLines();
+            int form = getIntent().getIntExtra("form", 1);
+            int height = getIntent().getIntExtra("height", 5);
+            int width = getIntent().getIntExtra("width", 5);
+            if (savedInstanceState != null) {
+                lines = new int[savedInstanceState.getInt("linesLength")][];
+                for (int i = 0; i < lines.length; i++) {
+                    lines[i] = savedInstanceState.getIntArray("lines" + i);
+                }
+                FieldBuilder fb = new FieldBuilder(
+                        new ResourceManager(this, form, width, height),
+                        (TableLayout) findViewById(R.id.field),
+                        lines);
+                fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                addition = savedInstanceState.getBoolean("addition");
+                pOne = savedInstanceState.getInt("pOne");
+                pTwo = savedInstanceState.getInt("pTwo");
+                TextView tv1 = findViewById(R.id.pOnePTV);
+                TextView tv2 = findViewById(R.id.pTwoPTV);
+                tv1.setText(String.valueOf(pOne));
+                tv2.setText(String.valueOf(pTwo));
+            }
+            else {
+                FieldBuilder fb = new FieldBuilder(new ResourceManager(
+                        this, form, width, height),
+                        (TableLayout) findViewById(R.id.field));
+                fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                lines = fb.getLines();
+            }
         }
     }
 
@@ -48,7 +86,8 @@ public class Game extends AppCompatActivity {
                 v.setEnabled(false);
                 int ivId = (v.getId()) - 3300, rem = ivId % lines[0].length;
                 ImageView ivLine = findViewById(3000 + ivId);
-                ivLine.setBackgroundColor(getResources().getColor(turn == 0 ? R.color.p1Color : R.color.p2Color));
+                ivLine.setBackgroundColor(
+                        getResources().getColor(turn == 0 ? R.color.p1Color : R.color.p2Color));
                 lines[(ivId - rem) / lines[0].length][rem] = turn == 0 ? 1 : 2;
                 boolean check = checkLines();
                 if (check) {
@@ -62,7 +101,7 @@ public class Game extends AppCompatActivity {
                     addition = false;
                     turn = turn == 0 ? 1 : 0;
                 }
-                if (turn == 1) {
+                if (turn == 1 && pveMode) {
                     letAITurn();
                 }
             }
@@ -74,7 +113,8 @@ public class Game extends AppCompatActivity {
         for(int i = 1; i < lines.length - 1; i += 2) {
             for (int j = 1; j < lines[i].length - 1; j += 2) {
                 if (lines[i][j] > 0) continue;
-                if (lines[i - 1][j] > 0 && lines[i][j - 1] > 0 && lines[i + 1][j] > 0 && lines[i][j + 1] > 0) {
+                if (lines[i - 1][j] > 0 && lines[i][j - 1] > 0 &&
+                    lines[i + 1][j] > 0 && lines[i][j + 1] > 0) {
                     ImageView iv = findViewById(3000 + i * lines[i].length + j);
                     lines[i][j] = turn == 0 ? 1 : 2;
                     iv.setImageResource(lines[i][j] == 1 ? image : R.drawable.circle);

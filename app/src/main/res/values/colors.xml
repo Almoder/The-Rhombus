@@ -31,8 +31,8 @@
     <!-- CustomGame -->
     <color name="customGameBackground">#FFF</color>
     <color name="customGameCaptionText">#000</color>
-    <color name="customGameButtonText">#000</color>
-    <color name="customGameButtonBack">#FFF</color>
+    <color name="customGameText">#000</color>
+    <color name="customGameSpecial">#0F0</color>
     <!-- Settings -->
     <color name="settingsBackground">#FFF</color>
     <color name="settingsTextColor">#000</color>

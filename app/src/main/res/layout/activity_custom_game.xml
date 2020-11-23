@@ -5,6 +5,183 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/customGameBackground"
     tools:context=".CustomGame">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/customGameCaption"
+                android:textColor="@color/customGameCaptionText"
+                android:textAlignment="center"
+                android:textSize="@dimen/customGameCaptionTextSize"
+                android:layout_marginBottom="@dimen/customGameCaptionMarginBottom"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:padding="@dimen/customGamePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customGameMode"
+                    android:textColor="@color/customGameText"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/customGameTextSize"/>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonPvp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customGameModePvp"
+                        android:textColor="@color/customGameText"
+                        android:textSize="@dimen/customGameTextSize"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButtonPve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/customGameMarginStart"
+                        android:text="@string/customGameModePve"
+                        android:textColor="@color/customGameText"
+                        android:textSize="@dimen/customGameTextSize"
+                        android:checked="true"/>
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:padding="@dimen/customGamePadding">
+
+                <Switch
+                    android:id="@+id/switchAdditionTurn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customGameAddTurn"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"
+                    android:checked="true"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start"
+                android:padding="@dimen/customGamePadding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customGameFieldForm"
+                    android:textColor="@color/customGameText"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/customGameTextSize"/>
+
+                <Spinner
+                    android:id="@+id/spinnerFieldForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/customGameMarginStart"
+                    android:entries="@array/fieldForms"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize" />
+            </LinearLayout>
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/customGamePadding"
+                android:columnCount="3"
+                android:rowCount="3">
+
+                <Button
+                    android:id="@+id/heightIncButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:text="@string/customGamePlus"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"
+                    android:onClick="onFormHeightInc"/>
+                <Button
+                    android:id="@+id/heightDecButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:text="@string/customGameMinus"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"
+                    android:onClick="onFormHeightDec"/>
+                <Button
+                    android:id="@+id/widthIncButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:text="@string/customGamePlus"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"
+                    android:onClick="onFormWidthInc"/>
+                <Button
+                    android:id="@+id/widthDecButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:text="@string/customGameMinus"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"
+                    android:onClick="onFormWidthDec"/>
+
+                <TextView
+                    android:id="@+id/fieldFormHW"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:text="@string/customGameDefaultFormHW"
+                    android:textColor="@color/customGameText"
+                    android:textSize="@dimen/customGameTextSize"/>
+
+            </GridLayout>
+
+            <Button
+                android:id="@+id/startCustomGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/customGamePadding"
+                android:background="@color/customGameBackground"
+                android:text="@string/customGameStartButton"
+                android:textColor="@color/customGameText"
+                android:textSize="@dimen/customGameTextSize"
+                android:onClick="onStartCustomGameClick"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

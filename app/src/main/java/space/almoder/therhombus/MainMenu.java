@@ -61,7 +61,7 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (intent != null) startActivity(intent);
-                finish();
+                else finish();
             }
         };
     }
