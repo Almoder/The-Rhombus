@@ -86,18 +86,3 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--
-                <ImageButton
-                    android:id="@+id/backButton"
-                    android:layout_width="69dp"
-                    android:layout_height="69dp"
-                    android:layout_margin="4dp"
-                    android:background="@color/gameBackground"
-                    android:onClick="onPauseClick"
-                    android:scaleType="fitXY"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/game_pause"
-                    tools:ignore="ContentDescription" />
-                -->

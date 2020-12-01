@@ -144,20 +144,20 @@
                     android:layout_height="wrap_content"
                     android:layout_row="1"
                     android:layout_column="0"
-                    android:text="@string/customGamePlus"
+                    android:text="@string/customGameMinus"
                     android:textColor="@color/customGameText"
                     android:textSize="@dimen/customGameTextSize"
-                    android:onClick="onFormWidthInc"/>
+                    android:onClick="onFormWidthDec"/>
                 <Button
                     android:id="@+id/widthDecButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="1"
                     android:layout_column="2"
-                    android:text="@string/customGameMinus"
+                    android:text="@string/customGamePlus"
                     android:textColor="@color/customGameText"
                     android:textSize="@dimen/customGameTextSize"
-                    android:onClick="onFormWidthDec"/>
+                    android:onClick="onFormWidthInc"/>
 
                 <TextView
                     android:id="@+id/fieldFormHW"

@@ -37,29 +37,49 @@ public class CustomGame extends AppCompatActivity {
     }
 
     public void onFormHeightInc(View view) {
-        if (height < 16) {
-            height++;
+        if (height < 9) {
+            Spinner spinner = findViewById(R.id.spinnerFieldForm);
+            if (spinner.getSelectedItemPosition() != 0) {
+                height += 2;
+                width += 2;
+            }
+            else height++;
             refreshTextView();
         }
     }
 
     public void onFormHeightDec(View view) {
-        if (height > 2) {
-            height--;
+        if (height > 3) {
+            Spinner spinner = findViewById(R.id.spinnerFieldForm);
+            if (spinner.getSelectedItemPosition() != 0) {
+                height -= 2;
+                width -= 2;
+            }
+            else height--;
             refreshTextView();
         }
     }
 
     public void onFormWidthInc(View view) {
-        if (width < 16) {
-            width++;
+        if (width < 9) {
+            Spinner spinner = findViewById(R.id.spinnerFieldForm);
+            if (spinner.getSelectedItemPosition() != 0) {
+                height += 2;
+                width += 2;
+            }
+            else width++;
             refreshTextView();
         }
     }
 
     public void onFormWidthDec(View view) {
-        if (width > 2) {
-            width--;
+        if (width > 3) {
+            Spinner spinner = findViewById(R.id.spinnerFieldForm);
+            if (spinner.getSelectedItemPosition() != 0) {
+                height -= 2;
+                width -= 2;
+            }
+            else width--;
             refreshTextView();
         }
     }

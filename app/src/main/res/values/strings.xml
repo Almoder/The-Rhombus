@@ -26,8 +26,8 @@
     <string name="customGameFieldForm">Field form</string>
     <string name="customGameStartButton">Start</string>
     <string-array name="fieldForms">
-        <item>rhombus</item>
         <item>rectangle</item>
+        <item>rhombus</item>
         <item>triangle</item>
     </string-array>
     <string name="customGameFieldSize">Field size</string>

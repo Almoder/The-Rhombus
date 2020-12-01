@@ -57,9 +57,9 @@ public class Game extends AppCompatActivity {
                     lines[i] = savedInstanceState.getIntArray("lines" + i);
                 }
                 FieldBuilder fb = new FieldBuilder(
-                        new ResourceManager(this, form, width, height),
-                        (TableLayout) findViewById(R.id.field),
-                        lines);
+                    new ResourceManager(this, form, width, height),
+                    (TableLayout) findViewById(R.id.field),
+                    lines);
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
                 addition = savedInstanceState.getBoolean("addition");
                 pOne = savedInstanceState.getInt("pOne");
@@ -71,8 +71,8 @@ public class Game extends AppCompatActivity {
             }
             else {
                 FieldBuilder fb = new FieldBuilder(new ResourceManager(
-                        this, form, width, height),
-                        (TableLayout) findViewById(R.id.field));
+                    this, form, width, height),
+                    (TableLayout) findViewById(R.id.field));
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
                 lines = fb.getLines();
             }

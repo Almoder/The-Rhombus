@@ -15,8 +15,8 @@ public class ResourceManager {
         this.c = c;
         this.lid = 0;
         this.form = form;
-        this.width = width > 0 ? width : 1;
-        this.height = height > 0 ? height : 1;
+        this.width = width;
+        this.height = height;
     }
 
     public int getIntRes(String name) {
@@ -44,6 +44,7 @@ public class ResourceManager {
     }
 
     public int[][] getFieldRes() {
+        System.out.println("LID: " + lid);
         if (lid != 0) {
             int[][] ret = new int[getIntRes("rows")][];
             for (int i = 0; i < ret.length; i++) {
@@ -52,6 +53,11 @@ public class ResourceManager {
             return ret;
         }
         else {
+            //case 1: return generateRectangle();
+            System.out.println("FORM: " + form);
+            if (form == 2) {
+                return generateRhombus();
+            }
             return generateRectangle();
         }
     }
@@ -85,11 +91,6 @@ public class ResourceManager {
         return c;
     }
 
-    private int[][] generateRhombus() {
-        int[][] ret = new int[height][width];
-        return null;
-    }
-
     private int[][] generateRectangle() {
         int[][] ret = new int[height * 2 + 1][width * 2 + 1];
         for (int i = 1; i <= height; i += 2) {
@@ -114,6 +115,36 @@ public class ResourceManager {
         }
         if (height % 2 == 0 && width % 2 == 0) {
             ret[height][width] = 4;
+        }
+        for (int i = 0; i <= height; i++) {
+            int temp = ret.length-i-1;
+            for (int j = 0; j <= width; j++) {
+                ret[i][ret[i].length-j-1] = ret[i][j];
+                ret[temp][j] = ret[i][j];
+                ret[temp][ret[i].length-j-1] = ret[i][j];
+            }
+        }
+        return ret;
+    }
+
+    private int[][] generateRhombus() {
+        int[][] ret = new int[height * 2 + 1][width * 2 + 1];
+        for (int i = 1; i <= height; i += 2) {
+            for (int j = width; j >= width - i; j -= 2) {
+                ret[i][j] = 7;
+                ret[i-1][j-1] = 4;
+                ret[i-1][j] = j == width - i + 1 ? 5 : 8;
+                ret[i][j-1] = j == width - i + 1 ? 6 : 9;
+            }
+        }
+        for (int i = 1; i < height; i += 2) {
+            for (int j = 1; j < width; j += 2) {
+                if (ret[i][j] == 7) continue;
+                ret[i][j] = 3;
+                ret[i-1][j-1] = 0;
+                ret[i-1][j] = 1;
+                ret[i][j-1] = 2;
+            }
         }
         for (int i = 0; i <= height; i++) {
             int temp = ret.length-i-1;
