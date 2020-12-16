@@ -63,8 +63,13 @@ public class ResourceManager {
     }
 
     public int[] getFieldColors() {
-        if (getIntRes("colors") == 0 && lid != 0) {
-            return c.getResources().getIntArray(c.getResources().getIdentifier("f0colors", "array", c.getPackageName()));
+        if (lid != 0) {
+            int col = c.getResources().getInteger(
+                    c.getResources().getIdentifier(
+                            "f" + lid + "colors", "integer", c.getPackageName()));
+            return c.getResources().getIntArray(
+                    c.getResources().getIdentifier(
+                            "f" + col + "colors", "array", c.getPackageName()));
         }
         else return getArrRes(0, "colors");
     }

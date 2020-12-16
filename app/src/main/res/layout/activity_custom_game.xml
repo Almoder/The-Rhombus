@@ -109,7 +109,7 @@
                     android:layout_marginStart="@dimen/customGameMarginStart"
                     android:entries="@array/fieldForms"
                     android:textColor="@color/customGameText"
-                    android:textSize="@dimen/customGameTextSize" />
+                    android:textSize="@dimen/customGameTextSize"/>
             </LinearLayout>
             <GridLayout
                 android:layout_width="wrap_content"

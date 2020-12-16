@@ -39,7 +39,7 @@ public class MainMenu extends AppCompatActivity {
         startActivity(new Intent(this, Threshold.class));
     }
 
-    View.OnClickListener getButtonOnClick(final Button button) {
+    private View.OnClickListener getButtonOnClick(final Button button) {
         final Intent intent;
         switch (button.getId()) {
             case 1001:

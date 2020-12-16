@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Game extends AppCompatActivity {
     private int[][] lines;
     private int turn = 0, pOne = 0, pTwo = 0, image;
-    private boolean addition = false, pveMode = true;
+    private boolean addition = false, addMode = true, pveMode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class Game extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         image = getIntent().getIntExtra("image", R.drawable.cross);
         pveMode = getIntent().getBooleanExtra("pveMode", true);
+        addMode = getIntent().getBooleanExtra("addTurn", true);
         int lid = getIntent().getIntExtra("levelId", 0);
         if (lid != 0) {
             if (savedInstanceState != null) {
