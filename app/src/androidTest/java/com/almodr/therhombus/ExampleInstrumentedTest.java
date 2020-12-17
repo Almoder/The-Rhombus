@@ -1,4 +1,4 @@
-package space.almoder.therhombus;
+package com.almodr.therhombus;
 
 import android.content.Context;
 
@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("space.almoder.therhombus", appContext.getPackageName());
+        assertEquals("com.almodr.therhombus", appContext.getPackageName());
     }
 }

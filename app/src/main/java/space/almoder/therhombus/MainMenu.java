@@ -14,55 +14,47 @@ public class MainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        LinearLayout ll = findViewById(R.id.linearLayout);
-        for (int i = 1; i < 5; i++) {
-            Button button = new Button(this);
-            button.setId(1000 + i);
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT);
-            button.setLayoutParams(lp);
-            button.setText(getResources().getString(
-                    getResources().getIdentifier(
-                            "mainMenuButton" + i,
-                            "string", getPackageName())));
-            button.setTextSize(getResources().getDimension(R.dimen.mainMenuButtonTextSize));
-            button.setTextColor(getResources().getColor(R.color.mainMenuButtonText));
-            button.setBackgroundColor(getResources().getColor(R.color.mainMenuButtonBack));
-            button.setOnClickListener(getButtonOnClick(button));
-            ll.addView(button);
+    }
+
+    public void onMenuClick(View v){
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.mb1:
+                intent = new Intent(this, Campaign.class);
+                intent.putExtra("image", getIntent().getIntExtra("image", R.drawable.cross));
+                startActivity(intent);
+                break;
+            case R.id.mb2:
+                intent = new Intent(this, CustomGame.class);
+                startActivity(intent);
+                break;
+            case R.id.mb3:
+                startActivityForResult(new Intent(this, Settings.class),0);
+                break;
+            case R.id.mb4:
+                intent = getIntent();
+                setResult(RESULT_OK, intent);
+                this.finish();
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + v.getId());
         }
     }
 
     @Override
-    public void onBackPressed() {
-        startActivity(new Intent(this, Threshold.class));
-    }
-
-    private View.OnClickListener getButtonOnClick(final Button button) {
-        final Intent intent;
-        switch (button.getId()) {
-            case 1001:
-                intent = new Intent(this, Campaign.class);
-                intent.putExtra("image", getIntent().getIntExtra("image", R.drawable.cross));
-                break;
-            case 1002:
-                intent = new Intent(this, CustomGame.class);
-                break;
-            case 1003:
-                intent = new Intent(this, Settings.class);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case 0:
+                finish();
                 break;
             default:
-                Threshold.setFin(true);
-                intent = null;
+                super.onActivityResult(requestCode, resultCode, data);
                 break;
         }
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (intent != null) startActivity(intent);
-                else finish();
-            }
-        };
+    }
+    @Override
+    public void onBackPressed() {
+        setResult(RESULT_CANCELED, getIntent());
+        super.onBackPressed();
     }
 }

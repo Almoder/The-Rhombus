@@ -1,4 +1,4 @@
-package space.almoder.therhombus;
+package com.almodr.therhombus;
 
 import org.junit.Test;
 

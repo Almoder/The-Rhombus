@@ -45,6 +45,7 @@ public class PlayerImages extends AppCompatActivity {
             public void onClick(View v) {
                 intent.putExtra("imageID",(int)v.getId() - 2500);
                 startActivity(intent);
+                finish();
             }
         };
     }

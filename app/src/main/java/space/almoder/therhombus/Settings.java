@@ -27,9 +27,11 @@ public class Settings extends AppCompatActivity {
                 "i" + getIntent().getIntExtra("imageID", 1),
                 "drawable", getPackageName()));
         startActivity(intent);
+        setResult(RESULT_OK);
     }
 
     public void playerImageViewOnClick(View view) {
         startActivity(new Intent(this, PlayerImages.class));
+        finish();
     }
 }

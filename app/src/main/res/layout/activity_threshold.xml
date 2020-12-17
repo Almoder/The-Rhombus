@@ -29,13 +29,11 @@
                 android:layout_marginBottom="@dimen/thresholdCaptionMarginBottom" />
             <Button
                 android:id="@+id/startButton"
-                android:background="@color/thresholdStartButtonBack"
                 android:padding="@dimen/thresholdStartButtonPadding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/thresholdStartButton"
                 android:textSize="@dimen/thresholdStartButtonTextSize"
-                android:textColor="@color/thresholdStartButtonText"
                 android:onClick="startButtonClick"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

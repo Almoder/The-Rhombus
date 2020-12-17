@@ -8,29 +8,65 @@
     android:background="@color/mainMenuBackground"
     tools:context=".MainMenu">
 
-    <androidx.core.widget.NestedScrollView
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
+        android:layout_height="64dp"
+        android:layout_marginTop="70dp"
+        android:onClick="onMenuClick"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@color/mainMenuCaptionText"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.39">
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="256dp"
-                android:layout_height="64dp"
-                android:layout_marginBottom="4dp"
-                android:text="@string/title"
-                android:textAlignment="center"
-                android:textColor="@color/mainMenuCaptionText"
-                android:textSize="40sp" />
+            <Button
+                android:id="@+id/mb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuClick"
+                android:text="@string/mainMenuButton1" />
+
+            <Button
+                android:id="@+id/mb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuClick"
+                android:text="@string/mainMenuButton2" />
+
+            <Button
+                android:id="@+id/mb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuClick"
+                android:text="@string/mainMenuButton3" />
+
+            <Button
+                android:id="@+id/mb4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuClick"
+                android:text="@string/mainMenuButton4" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

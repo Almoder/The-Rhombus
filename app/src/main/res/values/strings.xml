@@ -19,7 +19,7 @@
     <string name="campaignCaption">Campaign</string>
     <!-- CustomGame -->
     <string name="customGameCaption">Custom Game</string>
-    <string name="customGameMode">Mode:</string>
+    <string name="customGameMode">Mode</string>
     <string name="customGameModePvp">Pvp</string>
     <string name="customGameModePve">Pve</string>
     <string name="customGameAddTurn">Addition turn</string>
@@ -31,8 +31,8 @@
         <item>triangle</item>
     </string-array>
     <string name="customGameFieldSize">Field size</string>
-    <string name="customGamePlus">"+"</string>
-    <string name="customGameMinus">"-"</string>
+    <string name="customGamePlus">+</string>
+    <string name="customGameMinus">-</string>
     <string name="customGameDefaultFormHW">3:3</string>
     <!-- Shop -->
     <!-- Settings -->

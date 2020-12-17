@@ -22,6 +22,5 @@ public class Authorise extends AppCompatActivity {
 
     public void acceptButtonClick(View view) {
         startActivity(new Intent(this, MainMenu.class));
-        finish();
     }
 }

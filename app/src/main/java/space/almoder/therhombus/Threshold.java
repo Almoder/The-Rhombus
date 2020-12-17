@@ -2,6 +2,7 @@ package space.almoder.therhombus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,26 +19,29 @@ public class Threshold extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (getFin()) {
-            setFin(false);
-            Threshold.this.finish();
-        }
     }
 
     @Override
     public void onBackPressed() {
-        Threshold.this.finish();
+        this.finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode){
+            case 0:
+                if(resultCode != Activity.RESULT_CANCELED) {
+                    finish();
+                }
+                break;
+            default:
+                super.onActivityResult(requestCode, resultCode, data);
+                break;
+        }
     }
 
     public void startButtonClick(View view) {
-        startActivity(new Intent(this, MainMenu.class));
+        startActivityForResult(new Intent(this, MainMenu.class),0);
     }
 
-    public static boolean getFin() {
-        return fin;
-    }
-
-    public static void setFin(boolean fin) {
-        Threshold.fin = fin;
-    }
 }
