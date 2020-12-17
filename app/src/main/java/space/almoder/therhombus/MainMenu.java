@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import space.almoder.therhombus.Shop.ShopActivity;
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
@@ -35,6 +37,10 @@ public class MainMenu extends AppCompatActivity {
                 intent = getIntent();
                 setResult(RESULT_OK, intent);
                 this.finish();
+                break;
+            case R.id.mb5:
+                intent = new Intent(this, ShopActivity.class);
+                startActivity(intent);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + v.getId());

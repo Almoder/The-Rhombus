@@ -62,6 +62,13 @@
                 android:text="@string/mainMenuButton3" />
 
             <Button
+                android:id="@+id/mb5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuClick"
+                android:text="@string/shop" />
+
+            <Button
                 android:id="@+id/mb4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
