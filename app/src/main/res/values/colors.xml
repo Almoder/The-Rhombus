@@ -84,9 +84,9 @@
     </array>
 
     <color name="purple_200">#461681</color>
-    <color name="purple_500">#EB0F74A5</color>
+    <color name="purple_500">#0F74A5</color>
     <color name="purple_700">#4F416E</color>
-    <color name="teal_200">#037DDA</color>
+    <color name="teal_200">#577E9C</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
