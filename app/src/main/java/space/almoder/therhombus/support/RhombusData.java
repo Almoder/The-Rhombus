@@ -65,11 +65,11 @@ public class RhombusData {
 
     public static Drawable getPlayerIcDrawable(Context context){
         return  ContextCompat.getDrawable(context, RhombusData
-                .getPreferenceManager(context).getInt("playerImage", R.drawable.circle));
+                .getPreferenceManager(context).getInt("playerImage", R.drawable.cross));
     }
 
     public static Integer getPlayerIcID(Context context){
-        return  RhombusData.getPreferenceManager(context).getInt("playerImage", R.drawable.circle);
+        return  RhombusData.getPreferenceManager(context).getInt("playerImage", R.drawable.cross);
     }
 
     @Deprecated

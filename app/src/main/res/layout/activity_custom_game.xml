@@ -109,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/customGameMarginStart"
+                    android:popupBackground="@drawable/bg"
                     android:entries="@array/fieldForms"
                     android:textSize="@dimen/customGameTextSize"/>
             </LinearLayout>

@@ -42,10 +42,9 @@ public class Settings extends AppCompatActivity {
                     RhombusData.getPreferenceManager(Settings.this).edit()
                             .putInt("theme", R.style.Nion).apply();
                 }
-                Intent intent = new Intent(Settings.this, Threshold.class);
+                Intent intent = new Intent(Settings.this, MainMenu.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                startActivity(new Intent(Settings.this, MainMenu.class));
                 startActivity(getIntent());
             }
         });

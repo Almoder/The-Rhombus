@@ -64,6 +64,7 @@
                 android:id="@+id/mb1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:onClick="onMenuClick"
                 android:text="@string/mainMenuButton1" />
 
@@ -71,12 +72,14 @@
                 android:id="@+id/mb2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="20sp"
                 android:onClick="onMenuClick"
                 android:text="@string/mainMenuButton2" />
 
             <Button
                 android:id="@+id/mb3"
                 android:layout_width="match_parent"
+                android:textSize="20sp"
                 android:layout_height="wrap_content"
                 android:onClick="onMenuClick"
                 android:text="@string/mainMenuButton3" />
@@ -86,6 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onMenuClick"
+                android:textSize="20sp"
                 android:text="@string/shop" />
 
             <Button
@@ -93,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="onMenuClick"
+                android:textSize="20sp"
                 android:text="@string/mainMenuButton4" />
 
         </LinearLayout>

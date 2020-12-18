@@ -1,5 +1,6 @@
 package space.almoder.therhombus;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,7 +9,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import space.almoder.therhombus.support.LossDialogFragment;
 import space.almoder.therhombus.support.RhombusData;
+import space.almoder.therhombus.support.WinDialogFragment;
 
 public class Game extends AppCompatActivity {
     private int[][] lines;
@@ -19,6 +22,7 @@ public class Game extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(RhombusData.getPreferenceManager(this).getInt("theme", R.style.Game));
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_game);
         image = RhombusData.getPlayerIcID(this);
         pveMode = getIntent().getBooleanExtra("pveMode", true);
@@ -213,5 +217,27 @@ public class Game extends AppCompatActivity {
             iv = findViewById(3300 + freeI * lines[0].length + freeJ);
             iv.callOnClick();
         }
+    }
+
+    private void showWinDialogMessage(){
+        WinDialogFragment d = new WinDialogFragment();
+        d.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Game.this.finish();
+            }
+        });
+        d.show(this.getSupportFragmentManager(), "winDialog");
+    }
+
+    private void showLossDialogMessage(){
+        LossDialogFragment d = new LossDialogFragment();
+        d.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Game.this.finish();
+            }
+        });
+        d.show(this.getSupportFragmentManager(), "winDialog");
     }
 }

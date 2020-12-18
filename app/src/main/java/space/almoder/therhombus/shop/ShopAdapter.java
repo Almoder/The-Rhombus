@@ -3,7 +3,6 @@ package space.almoder.therhombus.shop;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -21,6 +19,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import space.almoder.therhombus.R;
 import space.almoder.therhombus.support.RhombusData;
+import space.almoder.therhombus.support.ShopDialogFragment;
 
 class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
