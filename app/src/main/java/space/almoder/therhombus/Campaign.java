@@ -42,7 +42,7 @@ public class Campaign extends AppCompatActivity {
                                 (int)getResources().getDimension(R.dimen.campaignButtonLandscapeSize),
                         TableRow.LayoutParams.WRAP_CONTENT);
                 temp.setLayoutParams(lp);
-                temp.setBackgroundColor(getResources().getColor(R.color.campaignButtonBack));
+                temp.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 int index = co ? i * 4 + j + 1 : i * 8 + j + 1;
                 temp.setText(getResources().getString(
                         getResources().getIdentifier("cBT" + index, "string", getPackageName())));

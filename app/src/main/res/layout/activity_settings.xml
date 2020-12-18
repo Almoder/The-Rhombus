@@ -31,7 +31,7 @@
                 android:layout_height="@dimen/settingsPlayerImageViewWH"
                 android:layout_marginStart="@dimen/settingsPlayerImageViewMargin"
                 android:layout_marginBottom="@dimen/settingsPlayerImageViewMargin"
-                android:background="@color/settingsPlayerImageViewBack"
+                android:background="#2C0099FF"
                 android:contentDescription="@string/settingsPlayerImageViewDescription"
                 android:onClick="playerImageViewOnClick"/>
 

@@ -29,11 +29,6 @@ public class Settings extends AppCompatActivity {
                 if(checkedId == R.id.dark) {
                     RhombusData.getPreferenceManager(Settings.this).edit()
                             .putInt("theme", R.style.DarkTheme1).apply();
-                    Intent intent = new Intent(Settings.this, Threshold.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                    startActivity(new Intent(Settings.this, MainMenu.class));
-                    startActivity(getIntent());
                 }
                if(checkedId == R.id.extra) {
                    RhombusData.getPreferenceManager(Settings.this).edit()
