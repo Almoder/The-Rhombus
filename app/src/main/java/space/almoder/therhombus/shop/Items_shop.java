@@ -1,18 +1,19 @@
-package space.almoder.therhombus.Shop;
+package space.almoder.therhombus.shop;
 
 import android.graphics.drawable.Drawable;
 
-public class Items_shop {
-    private Drawable icProduct;
+public class Items_shop{
     private String name;
     private String cost;
+    private Drawable icProduct;
+    private final String key;
 
 
-    public Items_shop(String name, String cost, Drawable Res){
-
-        this.name=name;
+    public Items_shop(String name, String cost, Drawable icProduct, String key) {
+        this.name = name;
         this.cost = cost;
-        this.icProduct =Res;
+        this.icProduct = icProduct;
+        this.key = key;
     }
 
     public String getName() {
@@ -38,4 +39,9 @@ public class Items_shop {
     public void setIcProduct(Drawable ItemResource) {
         this.icProduct = ItemResource;
     }
+
+    public String getKey() {
+        return key;
+    }
+
 }

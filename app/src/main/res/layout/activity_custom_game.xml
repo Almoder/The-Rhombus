@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/customGameBackground"
     tools:context=".CustomGame">
 
     <androidx.core.widget.NestedScrollView
@@ -27,7 +26,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/customGameCaption"
-                android:textColor="@color/customGameCaptionText"
                 android:textAlignment="center"
                 android:textSize="@dimen/customGameCaptionTextSize"
                 android:layout_marginBottom="@dimen/customGameCaptionMarginBottom"/>
@@ -43,7 +41,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/customGameMode"
-                    android:textColor="@color/customGameText"
                     android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textSize="@dimen/customGameTextSize"/>
@@ -61,7 +58,6 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/customGameModePvp"
-                        android:textColor="@color/customGameText"
                         android:textSize="@dimen/customGameTextSize" />
 
                     <RadioButton
@@ -74,7 +70,6 @@
                         android:checked="true"
                         android:gravity="center"
                         android:text="@string/customGameModePve"
-                        android:textColor="@color/customGameText"
                         android:textSize="@dimen/customGameTextSize" />
                 </RadioGroup>
             </LinearLayout>
@@ -91,7 +86,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/customGameAddTurn"
-                    android:textColor="@color/customGameText"
                     android:textSize="@dimen/customGameTextSize"
                     android:checked="true"/>
             </LinearLayout>
@@ -107,7 +101,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/customGameFieldForm"
-                    android:textColor="@color/customGameText"
                     android:textAlignment="center"
                     android:textSize="@dimen/customGameTextSize"/>
 
@@ -117,7 +110,6 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/customGameMarginStart"
                     android:entries="@array/fieldForms"
-                    android:textColor="@color/customGameText"
                     android:textSize="@dimen/customGameTextSize"/>
             </LinearLayout>
             <GridLayout
@@ -172,7 +164,6 @@
                     android:layout_column="1"
                     android:layout_gravity="center"
                     android:text="@string/customGameDefaultFormHW"
-                    android:textColor="@color/customGameText"
                     android:textSize="@dimen/customGameTextSize"/>
 
             </GridLayout>

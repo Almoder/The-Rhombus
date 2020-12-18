@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/authoriseBackground"
     tools:context=".Authorise">
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"
@@ -42,12 +41,10 @@
                 android:textColor="@color/authoriseNicknameEditText" />
             <Button
                 android:id="@+id/acceptButton"
-                android:background="@color/authoriseAcceptButtonBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/authoriseAcceptButton"
                 android:textSize="@dimen/authoriseAcceptButtonTextSize"
-                android:textColor="@color/authoriseAcceptButtonText"
                 android:onClick="acceptButtonClick" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

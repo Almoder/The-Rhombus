@@ -11,12 +11,15 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import space.almoder.therhombus.support.RhombusData;
+
 public class CustomGame extends AppCompatActivity {
 
     private int height = 3, width = 3, form = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(RhombusData.getPreferenceManager(this).getInt("theme", R.style.Game));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_game);
         Spinner spinner = findViewById(R.id.spinnerFieldForm);

@@ -8,18 +8,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Game">
-        <activity android:name=".Shop.ShopActivity"></activity>
-        <activity android:name=".PlayerImages" />
-        <activity android:name=".CustomGame" />
+        android:theme="@style/ExtraBlack">
+        <activity android:name=".shop.ShopActivity"></activity>
         <activity
-            android:name=".Threshold"
-            android:label="@string/app_name">
+            android:name=".Splash"
+            android:theme="@style/splash"
+            android:label="@string/app_name"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PlayerImages" />
+        <activity android:name=".CustomGame" />
+        <activity
+            android:name=".Threshold"
+            android:label="@string/app_name">
         </activity>
         <activity android:name=".Authorise" />
         <activity android:name=".MainMenu" />

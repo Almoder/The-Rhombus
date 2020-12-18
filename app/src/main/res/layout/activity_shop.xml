@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shop.ShopActivity">
+    tools:context=".shop.ShopActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/shopView"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/soul" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/coinsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"

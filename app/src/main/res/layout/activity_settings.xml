@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/settingsBackground"
     android:orientation="vertical"
     tools:context=".Settings">
 
@@ -24,8 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/settingsTextView1Margin"
                 android:text="@string/settingsText1"
-                android:textSize="@dimen/settingsTextSize"
-                android:textColor="@color/settingsTextColor"/>
+                android:textSize="@dimen/settingsTextSize" />
 
             <ImageView
                 android:id="@+id/playerImageView"
@@ -36,6 +34,47 @@
                 android:background="@color/settingsPlayerImageViewBack"
                 android:contentDescription="@string/settingsPlayerImageViewDescription"
                 android:onClick="playerImageViewOnClick"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Themes"
+                android:textSize="26dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/themeGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp">
+
+                <RadioButton
+                    android:id="@+id/base"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Base" />
+
+                <RadioButton
+                    android:id="@+id/dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dark" />
+
+                <RadioButton
+                    android:id="@+id/extra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EXTRA BLACK" />
+
+                <RadioButton
+                    android:id="@+id/nion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NION" />
+            </RadioGroup>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

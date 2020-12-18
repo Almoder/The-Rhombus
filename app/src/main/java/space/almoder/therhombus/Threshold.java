@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import space.almoder.therhombus.support.RhombusData;
+
 public class Threshold extends AppCompatActivity {
     static boolean fin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(RhombusData.getPreferenceManager(this).getInt("theme", R.style.Game));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threshold);
     }

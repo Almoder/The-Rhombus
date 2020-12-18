@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/thresholdBackground"
     tools:context=".Threshold">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -25,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/thresholdCaption"
                 android:textSize="@dimen/thresholdCaptionTextSize"
-                android:textColor="@color/thresholdCaptionText"
                 android:layout_marginBottom="@dimen/thresholdCaptionMarginBottom" />
             <Button
                 android:id="@+id/startButton"

@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/campaignBackground"
     tools:context=".Campaign">
 
     <androidx.core.widget.NestedScrollView
@@ -27,7 +26,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/campaignCaption"
-                android:textColor="@color/campaignCaptionText"
                 android:textAlignment="center"
                 android:textSize="@dimen/campaignCaptionTextSize"
                 android:layout_marginBottom="@dimen/campaignCaptionTextSize"/>

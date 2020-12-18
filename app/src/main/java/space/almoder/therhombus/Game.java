@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import space.almoder.therhombus.support.RhombusData;
+
 public class Game extends AppCompatActivity {
     private int[][] lines;
     private int turn = 0, pOne = 0, pTwo = 0, image;
@@ -15,9 +17,10 @@ public class Game extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(RhombusData.getPreferenceManager(this).getInt("theme", R.style.Game));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        image = getIntent().getIntExtra("image", R.drawable.cross);
+        image = RhombusData.getPlayerIcID(this);
         pveMode = getIntent().getBooleanExtra("pveMode", true);
         addMode = getIntent().getBooleanExtra("addTurn", true);
         int lid = getIntent().getIntExtra("levelId", 0);

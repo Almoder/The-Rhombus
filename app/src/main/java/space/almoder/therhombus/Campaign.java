@@ -11,11 +11,14 @@ import android.widget.TableRow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import space.almoder.therhombus.support.RhombusData;
+
 public class Campaign extends AppCompatActivity {
     static int levelId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(RhombusData.getPreferenceManager(this).getInt("theme", R.style.Game));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_campaign);
         initializeButtons(getResources().getConfiguration().orientation);

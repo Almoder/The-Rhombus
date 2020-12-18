@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gameBackground"
     tools:context=".Game">
     <LinearLayout
         android:id="@+id/scoresLayout"
@@ -21,20 +20,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zeroGamePointsOne"
-            android:textColor="@color/gamePoints"
             android:textSize="@dimen/gamePointsSize"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dotsGamePoints"
-            android:textColor="@color/gamePoints"
             android:textSize="@dimen/gamePointsSize"/>
         <TextView
             android:id="@+id/pTwoPTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zeroGamePointsTwo"
-            android:textColor="@color/gamePoints"
             android:textSize="@dimen/gamePointsSize"/>
     </LinearLayout>
     <androidx.core.widget.NestedScrollView
