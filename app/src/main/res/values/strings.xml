@@ -28,7 +28,6 @@
     <string-array name="fieldForms">
         <item>rectangle</item>
         <item>rhombus</item>
-        <item>triangle</item>
     </string-array>
     <string name="customGameFieldSize">Field size</string>
     <string name="customGamePlus">+</string>
@@ -42,6 +41,7 @@
     <string name="zeroGamePointsOne">0</string>
     <string name="dotsGamePoints">:</string>
     <string name="zeroGamePointsTwo">0</string>
+
     <string name="cBT1">1</string>
     <string name="cBT2">2</string>
     <string name="cBT3">3</string>
@@ -58,7 +58,6 @@
     <string name="cBT14">14</string>
     <string name="cBT15">15</string>
     <string name="cBT16">16</string>
-
     <string name="shop">Shop</string>
     <string name="buy_theme">Purchase confirmation</string>
     <string name="buy_mes">Click OK to buy</string>

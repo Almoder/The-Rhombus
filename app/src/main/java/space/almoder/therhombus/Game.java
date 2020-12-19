@@ -56,7 +56,7 @@ public class Game extends AppCompatActivity {
             }
         }
         else {
-            int form = getIntent().getIntExtra("form", 1);
+            int form = getIntent().getIntExtra("form", 0);
             int height = getIntent().getIntExtra("height", 5);
             int width = getIntent().getIntExtra("width", 5);
             if (savedInstanceState != null) {

@@ -1,7 +1,5 @@
 package space.almoder.therhombus;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +7,8 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import space.almoder.therhombus.support.RhombusData;
 
@@ -23,7 +22,6 @@ public class CustomGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_game);
         Spinner spinner = findViewById(R.id.spinnerFieldForm);
-        //spinner.setSelection(0);
         spinner.setOnItemSelectedListener(onItemSelectedListener());
     }
 
@@ -41,7 +39,6 @@ public class CustomGame extends AppCompatActivity {
         intent.putExtra("form", form);
         intent.putExtra("height", height);
         intent.putExtra("width", width);
-        Toast.makeText(this, "form = " + form, Toast.LENGTH_SHORT);
         startActivity(intent);
     }
 
@@ -51,10 +48,6 @@ public class CustomGame extends AppCompatActivity {
             if (spinner.getSelectedItemPosition() == 1) {
                 height += 2;
                 width += 2;
-            }
-            else if (spinner.getSelectedItemPosition() == 2) {
-                height++;
-                width++;
             }
             else height++;
             refreshTextView();
@@ -68,10 +61,6 @@ public class CustomGame extends AppCompatActivity {
                 height -= 2;
                 width -= 2;
             }
-            else if (spinner.getSelectedItemPosition() == 2) {
-                height--;
-                width--;
-            }
             else height--;
             refreshTextView();
         }
@@ -84,10 +73,6 @@ public class CustomGame extends AppCompatActivity {
                 height += 2;
                 width += 2;
             }
-            else if (spinner.getSelectedItemPosition() == 2) {
-                height++;
-                width++;
-            }
             else width++;
             refreshTextView();
         }
@@ -99,10 +84,6 @@ public class CustomGame extends AppCompatActivity {
             if (spinner.getSelectedItemPosition() == 1) {
                 height -= 2;
                 width -= 2;
-            }
-            else if (spinner.getSelectedItemPosition() == 2) {
-                height--;
-                width--;
             }
             else width--;
             refreshTextView();
