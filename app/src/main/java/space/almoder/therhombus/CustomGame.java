@@ -14,7 +14,8 @@ import space.almoder.therhombus.support.RhombusData;
 
 public class CustomGame extends AppCompatActivity {
 
-    private int height = 3, width = 3, form = 0;
+    private int height = 3, width = 3;
+    int form = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +95,7 @@ public class CustomGame extends AppCompatActivity {
         return new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                form = position;
                 height = width = 3;
                 refreshTextView();
             }
@@ -106,8 +108,6 @@ public class CustomGame extends AppCompatActivity {
     }
 
     private void refreshTextView() {
-        Spinner spinner = findViewById(R.id.spinnerFieldForm);
-        form = spinner.getSelectedItemPosition();
         TextView textView = findViewById(R.id.fieldFormHW);
         String s = height + ":" + width;
         textView.setText(s);
