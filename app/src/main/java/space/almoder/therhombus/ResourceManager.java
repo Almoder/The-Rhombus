@@ -55,7 +55,7 @@ public class ResourceManager {
         else {
             //case 1: return generateRectangle();
             System.out.println("FORM: " + form);
-            if (form == 2) {
+            if (form == 1) {
                 return generateRhombus();
             }
             return generateRectangle();
