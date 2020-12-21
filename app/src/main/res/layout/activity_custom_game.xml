@@ -52,25 +52,24 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButtonPvp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="@string/customGameModePvp"
-                        android:textSize="@dimen/customGameTextSize" />
+                        android:textSize="@dimen/customGameTextSize"
+                        android:onClick="onPvpMode"/>
 
                     <RadioButton
-                        android:id="@+id/radioButtonPve"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/customGameMarginStart"
                         android:layout_weight="1"
-                        android:layout_gravity="end"
                         android:checked="true"
                         android:gravity="center"
                         android:text="@string/customGameModePve"
-                        android:textSize="@dimen/customGameTextSize" />
+                        android:textSize="@dimen/customGameTextSize"
+                        android:onClick="onPveMode"/>
                 </RadioGroup>
             </LinearLayout>
             <LinearLayout

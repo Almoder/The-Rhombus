@@ -10,7 +10,7 @@ import android.widget.TableRow;
 public class FieldBuilder {
     private int[][] lines, indexes;
     private int[] colors;
-    private int minWD, maxWD;
+    private int minWD, maxWD, over = 0;
     private ResourceManager rm;
 
     FieldBuilder(ResourceManager rm, TableLayout tl) {
@@ -75,6 +75,10 @@ public class FieldBuilder {
         return lines;
     }
 
+    public int getOverHere() {
+        return over;
+    }
+
     private ImageView makeImageView(int i, int j) {
         ImageView iv = new ImageView(rm.getContext());
         iv.setId(3000 + i * indexes[0].length + j);
@@ -124,10 +128,12 @@ public class FieldBuilder {
             case 8:
                 iv.setBackgroundColor(lines[i][j] == 1 ? rm.getP1Color() : lines[i][j] == 2 ? rm.getP2Color() : colors[4]);
                 ivParams = new TableRow.LayoutParams(maxWD, minWD);
+                if (lines[i][j] == 0) over++;
                 break;
             case 9:
                 iv.setBackgroundColor(lines[i][j] == 1 ? rm.getP1Color() : lines[i][j] == 2 ? rm.getP2Color() : colors[5]);
                 ivParams = new TableRow.LayoutParams(minWD, maxWD);
+                if (lines[i][j] == 0) over++;
                 break;
             default:
                 ivParams = new TableRow.LayoutParams(minWD, minWD);

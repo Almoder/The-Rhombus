@@ -15,7 +15,7 @@ import space.almoder.therhombus.support.WinDialogFragment;
 
 public class Game extends AppCompatActivity {
     private int[][] lines;
-    private int turn = 0, pOne = 0, pTwo = 0, image;
+    private int turn = 0, pOne = 0, pTwo = 0, image, over = 0;
     private boolean addition = false, addMode = true, pveMode = true;
 
     @Override
@@ -39,6 +39,7 @@ public class Game extends AppCompatActivity {
                         (TableLayout) findViewById(R.id.field),
                         lines);
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                over = fb.getOverHere();
                 addition = savedInstanceState.getBoolean("addition");
                 pOne = savedInstanceState.getInt("pOne");
                 pTwo = savedInstanceState.getInt("pTwo");
@@ -53,6 +54,7 @@ public class Game extends AppCompatActivity {
                         (TableLayout) findViewById(R.id.field));
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
                 lines = fb.getLines();
+                over = fb.getOverHere();
             }
         }
         else {
@@ -69,6 +71,7 @@ public class Game extends AppCompatActivity {
                     (TableLayout) findViewById(R.id.field),
                     lines);
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
+                over = fb.getOverHere();
                 addition = savedInstanceState.getBoolean("addition");
                 pOne = savedInstanceState.getInt("pOne");
                 pTwo = savedInstanceState.getInt("pTwo");
@@ -83,6 +86,7 @@ public class Game extends AppCompatActivity {
                     (TableLayout) findViewById(R.id.field));
                 fb.buildButtonField((TableLayout) findViewById(R.id.buttonField), getLineOnClick());
                 lines = fb.getLines();
+                over = fb.getOverHere();
             }
         }
     }
@@ -98,12 +102,22 @@ public class Game extends AppCompatActivity {
                         getResources().getColor(turn == 0 ? R.color.p1Color : R.color.p2Color));
                 lines[(ivId - rem) / lines[0].length][rem] = turn == 0 ? 1 : 2;
                 boolean check = checkLines();
+                over--;
+                if (over == 0) {
+                    if (turn == 0) showWinDialogMessage();
+                    else showLossDialogMessage();
+                    return;
+                }
                 if (check) {
-                    if (addition) {
-                        addition = false;
+                    if (addMode) {
+                        if (addition) {
+                            addition = false;
+                            turn = turn == 0 ? 1 : 0;
+                        } else addition = true;
+                    }
+                    else {
                         turn = turn == 0 ? 1 : 0;
                     }
-                    else addition = true;
                 }
                 else {
                     addition = false;

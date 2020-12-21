@@ -16,6 +16,7 @@ public class CustomGame extends AppCompatActivity {
 
     private int height = 3, width = 3;
     int form = 0;
+    private boolean mode = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class CustomGame extends AppCompatActivity {
     public void onStartCustomGameClick(View view) {
         Intent intent = new Intent(this, Game.class);
         Switch s = findViewById(R.id.switchAdditionTurn);
-        intent.putExtra("pveMode", true);
+        intent.putExtra("pveMode", mode);
         intent.putExtra("addTurn", s.isChecked());
         intent.putExtra("form", form);
         intent.putExtra("height", height);
@@ -111,5 +112,13 @@ public class CustomGame extends AppCompatActivity {
         TextView textView = findViewById(R.id.fieldFormHW);
         String s = height + ":" + width;
         textView.setText(s);
+    }
+
+    public void onPvpMode(View view) {
+        mode = false;
+    }
+
+    public void onPveMode(View view) {
+        mode = true;
     }
 }
