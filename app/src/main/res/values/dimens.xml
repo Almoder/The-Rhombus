@@ -20,9 +20,9 @@
     <dimen name="campaignCaptionTextSize">40sp</dimen>
     <dimen name="campaignCaptionMarginBottom">40sp</dimen>
     <dimen name="campaignButtonPortraitSize">32sp</dimen>
-    <dimen name="campaignButtonPortraitTextSize">24sp</dimen>
+    <dimen name="campaignButtonPortraitTextSize">16sp</dimen>
     <dimen name="campaignButtonLandscapeSize">79sp</dimen>
-    <dimen name="campaignButtonLandscapeTextSize">19sp</dimen>
+    <dimen name="campaignButtonLandscapeTextSize">16sp</dimen>
     <!-- CustomGame -->
     <dimen name="customGameCaptionTextSize">40sp</dimen>
     <dimen name="customGameCaptionMarginBottom">32sp</dimen>
@@ -77,8 +77,8 @@
     <dimen name="f12minWD">8dp</dimen>
     <dimen name="f12maxWD">56dp</dimen>
     <!-- field13 -->
-    <dimen name="f13minWD">8dp</dimen>
-    <dimen name="f13maxWD">56dp</dimen>
+    <dimen name="f13minWD">7dp</dimen>
+    <dimen name="f13maxWD">49dp</dimen>
     <!-- field14 -->
     <dimen name="f14minWD">7dp</dimen>
     <dimen name="f14maxWD">49dp</dimen>

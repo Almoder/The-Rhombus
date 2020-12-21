@@ -7,35 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".Campaign">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:text="@string/campaignCaption"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:layout_marginTop="90sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginStart="14sp"
+        android:layout_marginEnd="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.3">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:padding="2sp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/campaignCaption"
-                android:textAlignment="center"
-                android:textSize="@dimen/campaignCaptionTextSize"
-                android:layout_marginBottom="@dimen/campaignCaptionTextSize"/>
-
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center">
-            </TableLayout>
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        </GridLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

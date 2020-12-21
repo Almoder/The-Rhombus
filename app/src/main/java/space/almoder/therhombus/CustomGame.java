@@ -45,7 +45,7 @@ public class CustomGame extends AppCompatActivity {
     }
 
     public void onFormHeightInc(View view) {
-        if (height < 100) {
+        if (height < 12) {
             Spinner spinner = findViewById(R.id.spinnerFieldForm);
             if (spinner.getSelectedItemPosition() == 1) {
                 height += 2;
@@ -69,7 +69,7 @@ public class CustomGame extends AppCompatActivity {
     }
 
     public void onFormWidthInc(View view) {
-        if (width < 100) {
+        if (width < 12) {
             Spinner spinner = findViewById(R.id.spinnerFieldForm);
             if (spinner.getSelectedItemPosition() == 1) {
                 height += 2;

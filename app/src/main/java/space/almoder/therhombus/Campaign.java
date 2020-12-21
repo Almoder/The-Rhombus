@@ -2,13 +2,15 @@ package space.almoder.therhombus;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TableRow;
+import android.widget.GridLayout;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import space.almoder.therhombus.support.RhombusData;
@@ -25,34 +27,40 @@ public class Campaign extends AppCompatActivity {
     }
 
     private void initializeButtons(int o) {
-        TableLayout table = findViewById(R.id.tableLayout);
+        GridLayout grid = findViewById(R.id.gridLayout);
         boolean co = o == Configuration.ORIENTATION_PORTRAIT;
+        grid.setRowCount(co ? 4 : 2);
+        grid.setColumnCount(co ? 4 : 8);
+
         for (int i = 0; i < (co ? 4 : 2); i++) {
-            TableRow row = new TableRow(this);
-            TableLayout.LayoutParams params = new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.WRAP_CONTENT,
-                    TableLayout.LayoutParams.WRAP_CONTENT);
-            params.gravity = Gravity.CENTER;
-            row.setLayoutParams(params);
             for (int j = 0; j < (co ? 4 : 8); j++) {
                 Button temp = new Button(this);
-                temp.setId(2001 + i * 4 + j);
-                TableRow.LayoutParams lp = new TableRow.LayoutParams(
-                        co ? TableRow.LayoutParams.WRAP_CONTENT :
-                                (int)getResources().getDimension(R.dimen.campaignButtonLandscapeSize),
-                        TableRow.LayoutParams.WRAP_CONTENT);
+                temp.setId(co ? 2001 + i * 4 + j : 2001 + i * 8 + j);
+                GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
+                lp.height = 142;
+                lp.width = 142;
+                lp.setMargins(10, 10, 10, 10);
+                TypedValue backValue = new TypedValue();
+                TypedValue textValue = new TypedValue();
+                Resources.Theme theme = getTheme();
+                theme.resolveAttribute(R.attr.colorPrimary, backValue, true);
+                theme.resolveAttribute(R.attr.colorOnPrimary, textValue, true);
+                @ColorInt int backColor = backValue.data;
+                @ColorInt int textColor = textValue.data;
+                temp.setBackgroundColor(backColor);
+                temp.setTextColor(textColor);
+                lp.setGravity(Gravity.CENTER);
                 temp.setLayoutParams(lp);
-                temp.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 int index = co ? i * 4 + j + 1 : i * 8 + j + 1;
                 temp.setText(getResources().getString(
                         getResources().getIdentifier("cBT" + index, "string", getPackageName())));
-                temp.setTextSize(getResources().getDimension(co ? R.dimen.campaignButtonPortraitTextSize :
+                temp.setTextSize(getResources().getDimension(co ?
+                        R.dimen.campaignButtonPortraitTextSize :
                         R.dimen.campaignButtonLandscapeTextSize));
-                temp.setTextColor(getResources().getColor(R.color.campaignButtonText));
+
                 temp.setOnClickListener(getLevelOnClick(temp));
-                row.addView(temp);
+                grid.addView(temp);
             }
-            table.addView(row);
         }
     }
 
