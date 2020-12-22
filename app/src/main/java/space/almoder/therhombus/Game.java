@@ -16,7 +16,7 @@ import space.almoder.therhombus.support.WinDialogFragment;
 public class Game extends AppCompatActivity {
     private int[][] lines;
     private int turn = 0, pOne = 0, pTwo = 0, image, over = 0;
-    private boolean addition = false, addMode = true, pveMode = true;
+    private boolean addition = false, addMode = true, pveMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class Game extends AppCompatActivity {
                 boolean check = checkLines();
                 over--;
                 if (over == 0) {
-                    if (turn == 0) showWinDialogMessage();
+                    if (pOne >= pTwo) showWinDialogMessage();
                     else showLossDialogMessage();
                     return;
                 }
